@@ -1,0 +1,12 @@
+{
+    "navbar": {
+      "brand" : "ErpNext",
+      "website" : "موقعنا",
+      "subscription_plans" : "خطط الإشتراك",
+      "e_invoice" : "الفاتورة الإلكترونية",
+      "zakat" : "هيئة الزكاة والدخل"
+    },
+    "form" : {
+        
+    }
+  }
