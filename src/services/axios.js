@@ -3,7 +3,7 @@ import axios from 'axios';
 //--------------------------------------- create axios instance -------------------------------
 //axios instance to send unauthenticated requests
 export const axiosInstance = axios.create({
-    withCredentials: true
+    withCredentials: false
 })
 
 

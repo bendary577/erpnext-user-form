@@ -24,7 +24,7 @@ const Navbar = () => {
                         <a class="nav-link" href="subscription-plans">{t(`navbar.subscription_plans`)}</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="https://cselection.com">{t(`navbar.e_invoice`)}</a>
+                        <a class="nav-link" href="e-invoice">{t(`navbar.e_invoice`)}</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="https://cselection.com">{t(`navbar.zakat`)}</a>

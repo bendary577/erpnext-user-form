@@ -7,6 +7,19 @@
       "zakat" : "Zakat and Income Authority"
     },
     "form" : {
-        
+        "signup" : "Signup",
+        "site_name" : "your site name",
+        "site_name_placeholder" : "yourcompany.cselection-erpnext.com",
+        "business_mail" : "your business mail",
+        "business_mail_placeholder" : "business mail",
+        "phone" : "your phone",
+        "phone_placeholder" : "phone",
+        "password" : "your password",
+        "password_placeholder" : "password",
+        "password_confirmation" : "repeat your password",
+        "password_confirmation_placeholder" : "password confirmation",
+        "agree" : "i agree to all",
+        "terms_and_service" : "terms of service",
+        "register" : "Register"
     }
   }

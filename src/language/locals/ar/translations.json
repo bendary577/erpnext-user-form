@@ -7,6 +7,19 @@
       "zakat" : "هيئة الزكاة والدخل"
     },
     "form" : {
-        
+      "signup" : "التسجيل",
+      "site_name" : "اسم نطاق موقعك",
+      "site_name_placeholder" : "yourcompany.cselection-erpnext.com",
+      "business_mail" : "البريد الإلكتروني لعملك",
+      "business_mail_placeholder" : "البريد الإلكتروني",
+      "phone" : "رقم الموبايل",
+      "phone_placeholder" : "رقم الموبايل",
+      "password" : "كلمة السر الخاصة بك",
+      "password_placeholder" : "كلمة السر",
+      "password_confirmation" : "أكد كلمة السر الخاصة بك",
+      "password_confirmation_placeholder" : "تأكيد كلمة السر",
+      "agree" : "أوافق علي جميع",
+      "terms_and_service" : "بنود الخدمة",
+      "register" : "سجل"
     }
   }

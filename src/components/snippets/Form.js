@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 import {register} from '../../services/requests';
+import { useTranslation } from 'react-i18next';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
+import flags from 'react-phone-number-input/flags';
 
 const Form = () => {
 
@@ -10,20 +14,30 @@ const Form = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState('');
     const [checked, setChecked] = useState(false);
+    const [value, setValue] = useState();
+
+    const { t } = useTranslation();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        clearInputs();
         let validation = verifyPasswords(password, confirmPassword);
         if(validation){
             let data = {
-                subdomain : companySubDomain,
-                businessMail,
+                site_name : companySubDomain,
+                business_mail : businessMail,
                 phone,
                 password,
             }
+            console.log("haaaaamaaaaaaaaada")
+            console.log(companySubDomain)
+            console.log(businessMail)
+            console.log(phone)
+            console.log(password)
+            console.log(confirmPassword)
+            console.log(data.site_name + data.business_mail + data.phone + data.password)
             let response = await register(data);
             if(response.status === 200){
+                clearInputs();
                 setMessage("you have registered your website successfully");
             }else{
                 setMessage(response.data.message);
@@ -43,6 +57,7 @@ const Form = () => {
     }
 
     const handleChangeCompanyDomain = (userInput) => {
+        console.log(userInput)
         setCompanySubDomain(userInput)
     }
 
@@ -67,11 +82,11 @@ const Form = () => {
     }
 
     const clearInputs = () => {
-        setCompanySubDomain();
-        setBusinessMail();
-        setPassword();
-        setConfirmPassword();
-        setMessage();
+        setCompanySubDomain('');
+        setBusinessMail('');
+        setPassword('');
+        setConfirmPassword('');
+        setMessage('');
     }
 
     return (
@@ -85,7 +100,7 @@ const Form = () => {
                             <div class="row justify-content-center">
                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">{t(`form.signup`)}</p>
 
                                 <form class="mx-1 mx-md-4" onSubmit={handleSubmit}>
 
@@ -94,52 +109,60 @@ const Form = () => {
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="text" id="subdomain" onChange={handleChangeCompanyDomain} class="form-control" placeholder="yourcompany.cselection-erpnext.com" required/>
-                                            <label class="form-label" for="subdomain">Your Site Name</label>
+                                            <input type="email" id="subdomain" value={companySubDomain} onChange={(e)=> {handleChangeCompanyDomain(e.target.value)}} class="form-control text-align-end" placeholder={t(`form.site_name_placeholder`)} />
+                                            <label class="form-label" for="subdomain">{t(`form.site_name`)}</label>
                                         </div>
                                     </div>
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="email" id="business_main" onChange={handleChangeBusinessMain} class="form-control" placeholder="your business email" required/>
-                                            <label class="form-label" for="business_main">Your Business Email</label>
+                                            <input type="email" id="business_main" value={businessMail} onChange={(e)=> {handleChangeBusinessMain(e.target.value)}} class="form-control" placeholder={t(`form.business_mail_placeholder`)} required/>
+                                            <label class="form-label" for="business_main">{t(`form.business_mail`)}</label>
                                         </div>
                                     </div>
 
-                                    <div class="d-flex flex-row align-items-center mb-4">
-                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                                        <div class="form-outline flex-fill mb-0">
-                                            <input type="tel" id="phone" onChange={handleChangePhone} class="form-control" placeholder="yourcompany.cselection-erpnext.com" required/>
-                                            <label class="form-label" for="phone">Your Phone</label>
+                                    <div class="d-flex flex-row align-items-center ">
+                                        <i class="fas fa-user fa-lg  fa-fw"></i>
+                                        <div class="form-outline flex-fill ">
+                                            <PhoneInput
+                                                international
+                                                defaultCountry="EG"
+                                                countryCallingCodeEditable={false}
+                                                withCountryCallingCode={true}
+                                                placeholder={t(`form.phone_placeholder`)}
+                                                value={value}
+                                                flags={flags}
+                                                onChange={handleChangePhone}/>
+                                            <label class="form-label" for="phone">{t(`form.phone`)}</label>
                                         </div>
                                     </div>
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="password" id="password" onChange={handleChangePassword} class="form-control" placeholder="your password" required/>
-                                            <label class="form-label" for="password">Password</label>
+                                            <input type="password" id="password" value={password} onChange={(e)=> {handleChangePassword(e.target.value)}} class="form-control" placeholder={t(`form.password_placeholder`)} required/>
+                                            <label class="form-label" for="password">{t(`form.password`)}</label>
                                         </div>
                                     </div>
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                        <input type="password" id="confirm_password" onChange={handleChangeConfirmPassword} class="form-control" placeholder="repeat your password" required/>
-                                        <label class="form-label" for="confirm_password">Repeat your password</label>
+                                        <input type="password" id="confirm_password" value={confirmPassword} onChange={(e)=> {handleChangeConfirmPassword(e.target.value)}} class="form-control" placeholder={t(`form.password_confirmation_placeholder`)} required/>
+                                        <label class="form-label" for="confirm_password">{t(`form.password_confirmation`)}</label>
                                         </div>
                                     </div>
 
-                                    <div class="form-check form-check-inline mb-4">
+                                    <div class="form-check form-check-inline ms-1 mb-4">
                                         <input class="form-check-input mt-1" defaultChecked={checked} type="checkbox" id="checkbox" onChange={handleChangeCheckBox} />
                                         <label class="form-check-label m-0 p-0" for="checkbox">
-                                        I agree to all <a href="javascript:void();">Terms of service</a>
+                                            {t(`form.agree`)} <a href="javascript:void();">{t(`form.terms_and_service`)}</a>
                                         </label>
                                     </div>
 
                                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                                        <button type="submit" class="btn btn-primary btn-lg">{t(`form.register`)}</button>
                                     </div>
 
                                 </form>
