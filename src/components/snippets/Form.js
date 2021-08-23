@@ -28,13 +28,6 @@ const Form = () => {
                 phone,
                 password,
             }
-            console.log("haaaaamaaaaaaaaada")
-            console.log(companySubDomain)
-            console.log(businessMail)
-            console.log(phone)
-            console.log(password)
-            console.log(confirmPassword)
-            console.log(data.site_name + data.business_mail + data.phone + data.password)
             let response = await register(data);
             if(response.status === 200){
                 clearInputs();

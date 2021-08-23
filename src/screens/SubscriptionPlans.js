@@ -17,11 +17,11 @@ const SubscriptionPlans = () => {
                                 <div class="card" style={{"border-radius" : "25px"}}>
                                 <div class="card-body p-md-5">
                                     <div class="row justify-content-center">
-                                        <p class="text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Subscription Plans</p>
-                                        <div class="col-lg-6 col-md-6 col-xl-6 order-2 order-lg-1">
+                                        <p class="wow animate__animated animate__backInLeft text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Subscription Plans</p>
+                                        <div class="wow animate__animated animate__backInDown col-lg-6 col-md-6 col-xl-6 order-2 order-lg-1">
                                             <FreeSubscriptionPlanCard />
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-xl-6 d-flex align-items-center order-1 order-lg-2">
+                                        <div class="wow animate__animated animate__backInDown col-lg-6 col-md-6 col-xl-6 d-flex align-items-center order-1 order-lg-2">
                                             <PremiumSubscriptionPlanCard />
                                         </div>
                                     </div>

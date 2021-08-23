@@ -24,10 +24,12 @@ const PremiumSubscriptionPlanCard = () => {
                     </div>
                     <div class="col-lg-7 align-self-center">
                     <ul class="list-inline pl-3 font-14 font-weight-medium text-dark">
-                        <li class="py-2"><i class="icon-check text-info mr-2"></i> <span>6 Days a Week </span></li>
-                        <li class="py-2"><i class="icon-check text-info mr-2"></i> <span>Dedicated Trainer</span></li>
-                        <li class="py-2"><i class="icon-check text-info mr-2"></i> <span>Diet Plan Included </span></li>
-                        <li class="py-2"><i class="icon-check text-info mr-2"></i> <span>Morning and Evening Batches</span></li>
+                        <li class="py-2"><i class="icon-check text-info mr-2"></i> <span>Security Updates</span></li>
+                        <li class="py-2"><i class="icon-check text-info mr-2"></i> <span>Server Monitoring</span></li>
+                        <li class="py-2"><i class="icon-check text-info mr-2"></i> <span>Product Warranty</span></li>
+                        <li class="py-2"><i class="icon-check text-info mr-2"></i> <span>On Premise Hosting</span></li>
+                        <li class="py-2"><i class="icon-check text-info mr-2"></i> <span>Professional Support</span></li>
+                        <li class="py-2"><i class="icon-check text-info mr-2"></i> <span>Personalised Onboarding</span></li>
                     </ul>
                     </div>
                 </div>

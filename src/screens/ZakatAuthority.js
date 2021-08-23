@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../components/snippets/Footer';
 import Navbar from '../components/snippets/Navbar';
-import InvoiceImg from '../assets/images/e-invoice/invoice.png';
+import ksaIcon from '../assets/icons/zakat/ksa.png';
 import EInvoiceServiceCard from '../components/cards/EInvoiceServiceCard';
 import erpnextIcon from '../assets/images/e-invoice/erpnext.png';
 import integrationIcon from '../assets/images/e-invoice/integrate.png';
@@ -11,14 +11,20 @@ import validationIcon from '../assets/images/e-invoice/validation.png';
 import enhancementIcon from '../assets/images/e-invoice/enhancement.png';
 import facilityIcon from '../assets/images/e-invoice/facility.png';
 import costIcon from '../assets/images/e-invoice/cost.png';
+import kaabaIcon from '../assets/icons/zakat/kaaba.png';
+import zakatIcon from '../assets/icons/zakat/zakat.png';
+import mapIcon from '../assets/icons/zakat/map.png';
+import ZakatCircleCard from '../components/cards/ZakatCircleCard';
+import incomeIcon from '../assets/icons/zakat/income.png';
+import taxesIcon from '../assets/icons/zakat/taxes.png';
+import taxIcon from '../assets/icons/zakat/tax.png';
 
+const ZakatAuthority = () => {
 
-const EInvoice = () => {
-
-    return (
+    return (    
         <div>
             <Navbar />
-            <div className="subscription_plans_div" style={{"background-color" : "#eee", height : "2300px"}}>
+            <div className="subscription_plans_div" style={{"background-color" : "#eee", height : "1900px"}}>
                 <section className="py-5" >
                     <div class="container">
                         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -27,11 +33,11 @@ const EInvoice = () => {
                                 <div class="card-body p-md-5">
                                     {/* ------------------------- first row ------------------------------- */}
                                     <div class="row justify-content-center">
-                                        <p class="wow animate__animated animate__backInDown text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Electronic Invoice</p>
+                                        <p class="wow animate__animated animate__backInDown text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Zakat and Income Authority</p>
+                                        <div className="heading pe-5">
+                                            <h2 className="wow animate__animated animate__backInLeft py-3 px-5">We offer all services concerning the egyptian e-invoicing system</h2>
+                                        </div>
                                         <div class="col-md-8 order-2 order-lg-1">
-                                            <div className="heading pe-5">
-                                                <h2 className="wow animate__animated animate__backInLeft text-justify">We offer all services concerning the egyptian e-invoicing system</h2>
-                                            </div>
                                             <div className="wow animate__animated animate__backInLeft text me-5 my-5">
                                                 <div className="d-flex mb-2">
                                                     <img src={checkIcon} style={{width:'15px', height:'15px'}} className="mt-2 mx-2" alt="" />
@@ -52,13 +58,13 @@ const EInvoice = () => {
                                             </div>
                                         </div>
                                         <div class="wow animate__animated animate__backInRight col-md-4 d-flex align-items-center order-1 order-lg-2">
-                                                <img src={InvoiceImg} style={{width:"300px", height:"300px"}} alt="" />
+                                            <img src={ksaIcon} style={{width:"300px", height:"300px"}} alt="" />
                                         </div>
                                     </div>
 
                                      {/* ------------------------- second row ------------------------------- */}
                                     <div class="row justify-content-center">
-                                        <p class="text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Services</p>
+                                        <p class="text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Main Services</p>
                                         <div class="col-md-12 order-2 order-lg-1">
                                             <div className="heading mb-5">
                                                 <h4 className="">cseletction offers integrating your erp system with e-invoice, or use ours !</h4>
@@ -66,11 +72,14 @@ const EInvoice = () => {
                                             <div className="cards">
                                                 <div className="container">
                                                     <div className="row">
-                                                        <div className="wow animate__animated animate__backInLeft col-md-6">
-                                                            <EInvoiceServiceCard icon={erpnextIcon} />
+                                                        <div className="wow animate__animated animate__backInDown col-md-4">
+                                                            <EInvoiceServiceCard icon={kaabaIcon} />
                                                         </div>
-                                                        <div className="wow animate__animated animate__backInRight col-md-6">
-                                                            <EInvoiceServiceCard icon={integrationIcon} />
+                                                        <div className="wow animate__animated animate__backInDown col-md-4">
+                                                            <EInvoiceServiceCard icon={zakatIcon} />
+                                                        </div>
+                                                        <div className="wow animate__animated animate__backInDown col-md-4">
+                                                            <EInvoiceServiceCard icon={mapIcon} />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -81,7 +90,7 @@ const EInvoice = () => {
                                     
                                      {/* ------------------------- third row ------------------------------- */}
                                      <div class="row justify-content-center">
-                                        <p class="text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Why to integrate E-Invoice ?</p>
+                                        <p class="text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">activity type you will deal with</p>
                                         <div class="col-md-12 order-2 order-lg-1">
                                             <div className="heading mb-5">
                                                 <h4 className="">leverage the huge benifits of e-invoice to enhance your business</h4>
@@ -89,17 +98,14 @@ const EInvoice = () => {
                                             <div className="cards">
                                                 <div className="container">
                                                     <div className="row">
-                                                        <div className="wow animate__animated animate__backInLeft col-md-12">
-                                                            <EInvoiceBenifitsCard icon={validationIcon} title="validate" description="Validate invoice items and data for parties before issuing." />
+                                                        <div className="wow animate__animated animate__backInDown col-md-4">
+                                                            <ZakatCircleCard icon={incomeIcon} title="zakat registration" description="Validate invoice items and data for parties before issuing." />
                                                         </div>
-                                                        <div className="wow animate__animated animate__backInRight col-md-12">
-                                                            <EInvoiceBenifitsCard icon={enhancementIcon} title="enhancement" description="Enhance the company taxation position by classifying it as a Low-Risk profile company"/>
+                                                        <div className="wow animate__animated animate__backInDown col-md-4">
+                                                            <ZakatCircleCard icon={taxesIcon} title="zakat payment" description="Validate invoice items and data for parties before issuing." />
                                                         </div>
-                                                        <div className="wow animate__animated animate__backInLeft col-md-12">
-                                                            <EInvoiceBenifitsCard icon={facilityIcon} title="facility" description="Facilitate inter-company settlement procedures for VAT"/>
-                                                        </div>
-                                                        <div className="wow animate__animated animate__backInRight col-md-12">
-                                                            <EInvoiceBenifitsCard icon={costIcon} title="cost reduction" description="Reduce the administrative burden, cost of transactions and the need to archive paper invoice" />
+                                                        <div className="wow animate__animated animate__backInDown col-md-4">
+                                                            <ZakatCircleCard icon={taxIcon} title="zakat declaration" description="Validate invoice items and data for parties before issuing." />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -122,4 +128,4 @@ const EInvoice = () => {
     )
 }
 
-export default EInvoice;
+export default ZakatAuthority;

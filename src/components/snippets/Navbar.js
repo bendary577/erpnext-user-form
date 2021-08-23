@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../buttons/LanguageSwitcher';
+import '../../assets/css/navbar.css';
 
 const Navbar = () => {
     const { t } = useTranslation();
@@ -15,7 +16,7 @@ const Navbar = () => {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="https://cselection.com"></a>
+                        <a class="nav-link nav_link" href="https://cselection.com"></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="https://cselection.com">{t(`navbar.website`)}</a>
@@ -27,7 +28,7 @@ const Navbar = () => {
                         <a class="nav-link" href="e-invoice">{t(`navbar.e_invoice`)}</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="https://cselection.com">{t(`navbar.zakat`)}</a>
+                        <a class="nav-link" href="zakat-authority">{t(`navbar.zakat`)}</a>
                     </li>
                     <li class="nav-item active mx-2">
                         <LanguageSwitcher />
