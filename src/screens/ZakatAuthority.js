@@ -3,14 +3,7 @@ import Footer from '../components/snippets/Footer';
 import Navbar from '../components/snippets/Navbar';
 import ksaIcon from '../assets/icons/zakat/ksa.png';
 import EInvoiceServiceCard from '../components/cards/EInvoiceServiceCard';
-import erpnextIcon from '../assets/images/e-invoice/erpnext.png';
-import integrationIcon from '../assets/images/e-invoice/integrate.png';
 import checkIcon from '../assets/images/e-invoice/check.png';
-import EInvoiceBenifitsCard from '../components/cards/EInvoiceBenifitsCard';
-import validationIcon from '../assets/images/e-invoice/validation.png';
-import enhancementIcon from '../assets/images/e-invoice/enhancement.png';
-import facilityIcon from '../assets/images/e-invoice/facility.png';
-import costIcon from '../assets/images/e-invoice/cost.png';
 import kaabaIcon from '../assets/icons/zakat/kaaba.png';
 import zakatIcon from '../assets/icons/zakat/zakat.png';
 import mapIcon from '../assets/icons/zakat/map.png';
@@ -35,13 +28,13 @@ const ZakatAuthority = () => {
                                     <div class="row justify-content-center">
                                         <p class="wow animate__animated animate__backInDown text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Zakat and Income Authority</p>
                                         <div className="heading pe-5">
-                                            <h2 className="wow animate__animated animate__backInLeft py-3 px-5">We offer all services concerning the egyptian e-invoicing system</h2>
+                                            <h2 className="wow animate__animated animate__backInLeft py-3 px-5">We offer all services to integrate your system with Zakat and income authority in Saudi Arabia</h2>
                                         </div>
                                         <div class="col-md-8 order-2 order-lg-1">
                                             <div className="wow animate__animated animate__backInLeft text me-5 my-5">
                                                 <div className="d-flex mb-2">
                                                     <img src={checkIcon} style={{width:'15px', height:'15px'}} className="mt-2 mx-2" alt="" />
-                                                    <h4>Full digital invoice processing​</h4>
+                                                    <h4>Full electronic invoice processing​</h4>
                                                 </div>
                                                 <div className="d-flex mb-2">
                                                     <img src={checkIcon} style={{width:'15px', height:'15px'}} className="mt-2 mx-2" alt="" />

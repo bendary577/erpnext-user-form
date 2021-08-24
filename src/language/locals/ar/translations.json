@@ -21,5 +21,21 @@
       "agree" : "أوافق علي جميع",
       "terms_and_service" : "بنود الخدمة",
       "register" : "سجل"
+    },
+    "subscription" : {
+      "subscription_plans" : "خطط الاشتراك",
+      "basic_plan" : "الخطة المبدأئية",
+      "premium_plan" : "الخطة المدفوعة",
+      "Free" : "مجانا",
+      "Popular" : "الأكثر طلباَ",
+      "for_month" : "لمدة شهر واحد فقط",
+      "deleted_price" : "$ 100/شهريا",
+      "choose_plan" : "اختر الخطة",
+      "security_updates" : "تحديثات أمنية",
+      "server_monitoring" : "مراقبة الخوادم",
+      "product_warranty" : "ضمان المنتج",
+      "premise_hosting" : "الاستضافة في مكان العمل",
+      "professional_support" : "دعم احترافي",
+      "personalised_onboarding" : "الإعداد الشخصي"
     }
   }

@@ -21,5 +21,21 @@
         "agree" : "i agree to all",
         "terms_and_service" : "terms of service",
         "register" : "Register"
+    },
+    "subscription" : {
+      "subscription_plans" : "subscription plans",
+      "basic_plan" : "Basic Plan",
+      "premium_plan" : "Premium Plan",
+      "free" : "free",
+      "popular" : "popular",
+      "for_month" : "for only 1 month",
+      "deleted_price" : "$ 100/mo",
+      "choose_plan" : "CHOOSE PLAN",
+      "security_updates" : "Security Updates",
+      "server_monitoring" : "Server Monitoring",
+      "product_warranty" : "Product Warranty",
+      "premise_hosting" : "On Premise Hosting",
+      "professional_support" : "Professional Support",
+      "personalised_onboarding" : "Personalised Onboarding" 
     }
   }

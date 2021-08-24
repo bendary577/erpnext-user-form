@@ -6,7 +6,8 @@ import UserForm from '../src/screens/UserForm';
 import EInvoice from './screens/EInvoice';
 import ZakatAuthority from './screens/ZakatAuthority';
 import WOW from 'wowjs';
-
+import { FloatingButton, Item } from "react-floating-button";
+import icon from './assets/icons/zakat/kaaba.png';
 
 function App() {
 
@@ -41,6 +42,20 @@ function App() {
             <ZakatAuthority />
           </Route>
 
+          <FloatingButton>
+            <Item
+              imgSrc={icon}
+              onClick={() => {
+                console.log("callback function here");
+              }}
+            />
+            <Item
+              imgSrc={icon}
+              onClick={() => {
+                console.log("callback function here");
+              }}
+            />
+        </FloatingButton>
         </Switch>
       </BrowserRouter>
     </div>
