@@ -17,6 +17,7 @@ const LanguageSwitcher = ()=> {
         document.getElementById('body').setAttribute("lang", i18n.language);
         document.getElementById('body').setAttribute("dir", i18n.language === "en" ? "ltr" : "rtl");
         document.getElementById('body').setAttribute("class", i18n.language === "en" ? "text-left" : "text-right");
+        localStorage.setItem('language', i18n.language);
     }
 
     return (

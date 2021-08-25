@@ -18,7 +18,7 @@ const EInvoice = () => {
     return (
         <div>
             <Navbar />
-            <div className="subscription_plans_div" style={{"background-color" : "#eee", height : "2300px"}}>
+            <div className="e_invoice_div" style={{"background-color" : "#eee"}}>
                 <section className="py-5" >
                     <div class="container">
                         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -67,10 +67,10 @@ const EInvoice = () => {
                                                 <div className="container">
                                                     <div className="row">
                                                         <div className="wow animate__animated animate__backInLeft col-md-6">
-                                                            <EInvoiceServiceCard icon={erpnextIcon} />
+                                                            <EInvoiceServiceCard icon={erpnextIcon} title="Integrate" description="your erp system with e-invoice"/>
                                                         </div>
                                                         <div className="wow animate__animated animate__backInRight col-md-6">
-                                                            <EInvoiceServiceCard icon={integrationIcon} />
+                                                            <EInvoiceServiceCard icon={integrationIcon} title="" description="" />
                                                         </div>
                                                     </div>
                                                 </div>

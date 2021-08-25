@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {register} from '../../services/requests';
 import { useTranslation } from 'react-i18next';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
+import { useLocation } from 'react-router-dom';
 
 const Form = () => {
 
@@ -15,8 +16,13 @@ const Form = () => {
     const [message, setMessage] = useState('');
     const [checked, setChecked] = useState(false);
     const [value, setValue] = useState();
+    const location = useLocation();
 
     const { t } = useTranslation();
+
+    useEffect(()=>{
+        console.log(location.plan)
+    }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
