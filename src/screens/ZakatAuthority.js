@@ -86,22 +86,22 @@ const ZakatAuthority = () => {
                                     
                                      {/* ------------------------- third row ------------------------------- */}
                                      <div class="row justify-content-center">
-                                        <p class="text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">activity type you will deal with</p>
+                                        <p class="text-center text-black h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">{t(`zakat.activity_type`)}</p>
                                         <div class="col-md-12 order-2 order-lg-1">
                                             <div className="heading mb-5">
-                                                <h4 className="">leverage the huge benifits of e-invoice to enhance your business</h4>
+                                                <h4 className="">{t(`zakat.leverage_benifits`)}</h4>
                                             </div>
                                             <div className="cards">
                                                 <div className="container">
                                                     <div className="row">
                                                         <div className="wow animate__animated animate__backInDown col-md-4">
-                                                            <ZakatCircleCard icon={incomeIcon} title="zakat registration" description="Zakat is subject to any activity intended to earn money or work, so once registered with the Ministry of Commerce, TIN is.." />
+                                                            <ZakatCircleCard icon={incomeIcon} title={t(`zakat.zakat_registration`)} description={t(`zakat.zakat_registration_description`)} />
                                                         </div>
                                                         <div className="wow animate__animated animate__backInDown col-md-4">
-                                                            <ZakatCircleCard icon={taxesIcon} title="zakat payment" description="After you complete your declaration, a SADAD invoice is generated containing the invoice number and the amount due." />
+                                                            <ZakatCircleCard icon={taxesIcon} title={t(`zakat.zakat_payment`)} description={t(`zakat.zakat_payment_description`)} />
                                                         </div>
                                                         <div className="wow animate__animated animate__backInDown col-md-4">
-                                                            <ZakatCircleCard icon={taxIcon} title="zakat declaration" description="This service allows you to submit Zakat related returns for a specific financial period (including transaction pricing forms)..." />
+                                                            <ZakatCircleCard icon={taxIcon} title={t(`zakat.zakat_declaration`)} description={t(`zakat.zakat_declaration_description`)} />
                                                         </div>
                                                     </div>
                                                 </div>

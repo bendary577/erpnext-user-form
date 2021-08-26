@@ -50,7 +50,7 @@
       "special_customization" : "special customization",
       "app_development" : "special app development",
       "invoice_integration" : "E-invoice integration",
-      "start_users" : "start from 10 users",
+      "start_users" : "starts from 10 users",
       "request_quote" : "request quote",
       "community_support" : "community support",
       "unlimited" : "unlimited"
@@ -62,7 +62,7 @@
       "litst_item_2" : "zakat, customs and tax regulations",
       "litst_item_3" : "Tax and Customs Agreements",
       "litst_item_4" : "Regulations under Consultations",
-      "main_services" : "main_services",
+      "main_services" : "main services",
       "main_services_intro" : "cseletction offers integrating your erp system with e-invoice, or use ours !",
       "registration" : "Registration",
       "payment_refund" : "payment and refund",
@@ -76,6 +76,28 @@
       "zakat_payment_description" : "After you complete your declaration, a SADAD invoice is generated containing the invoice number and the amount due.",
       "zakat_declaration" : "zakat declaration",
       "zakat_declaration_description" : "This service allows you to submit Zakat related returns for a specific financial period (including transaction pricing forms)..."
-
+    },
+    "einvocie" : {
+      "title" : "Electronic Invoice",
+      "intro" : "We offer all services concerning the egyptian e-invoicing system",
+      "digital_processing" : "Full digital invoice processing",
+      "decleration_submission" : "Simplification of declaration submission",
+      "taxpayer_experience" : "Improved digital taxpayer experience",
+      "encourage_informal" : "compliance with formal economy",
+      "services" : "Services",
+      "services_intro" : "cseletction offers integrating your erp system with e-invoice, or can use Erpnext system that we offer!",
+      "integrate" : "Integrate",
+      "erpnext_integration" : "the new einvoicing systems with a hole new instance of erpnext provided in our services",
+      "existing_erp" : "your existing erpnext with all features of the new einvoicing systems",
+      "why_einvoice" : "Why to integrate E-Invoice ?",
+      "why_einvoice_intro" : "leverage the huge benifits of e-invoice to enhance your business",
+      "validate" : "validate",
+      "enhance" : "enhance",
+      "facilitate" : "facilitate",
+      "imporves" : "cost imporves",
+      "benifits_1" : "Validate invoice items and data for parties before issuing",
+      "benifits_2" : "Enhance the company taxation position by classifying it as a Low-Risk profile company",
+      "benifits_3" : "Facilitate inter-company settlement procedures for VAT",
+      "benifits_4" : "Updates and improves invoices exchanging methods between companies"
     }
   }

@@ -10,8 +10,8 @@ const EInvoiceServiceCard = (props) => {
                 <div class="d-flex align-items-center">
                     <h5 class="font-weight-medium mb-0"><strong>{props.title}</strong></h5>
                 </div>
-                <div className="d-flex">
-                    <h6>{props.description}</h6>
+                <div className="d-flex mt-2">
+                    <h6 className="text-justify">{props.description}</h6>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">

@@ -14,7 +14,7 @@ const ZakatCircleCard = (props) => {
                     <p class="card-text">{props.description}</p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    
                 </div>
             </div>
         </div>
