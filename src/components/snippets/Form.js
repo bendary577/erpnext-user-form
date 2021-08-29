@@ -18,9 +18,8 @@ const Form = (props) => {
     const [plan, setPlan] = useState('');
     const [value, setValue] = useState();
     const location = useLocation();
-
     const { t } = useTranslation();
-
+    
     useEffect(()=>{
         if(location.plan === 'free'){
             setPlan('free')
