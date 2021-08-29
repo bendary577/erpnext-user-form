@@ -30,8 +30,10 @@ const CustomizationSubscriptionPlanCard = (props) => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                    <Link className="link" to={{pathname:`form`, plan:`customization`}}>{t(`subscription.request_quote`)} </Link>
+                    <a type="button" className="link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{t(`subscription.request_quote`)} </a>
                 </div>
+                {/* ---------------------------------- send message qoute modal --------------------------------- */}
+
             </div>
         </div>
     )

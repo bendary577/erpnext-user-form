@@ -45,6 +45,33 @@ const SubscriptionPlans = () => {
                     </div>
                 </section>
             </div>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">{t(`subscription.get_quote`)}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+                        </div>
+                        <div class="modal-body text-left">
+                            <form>
+                                <div class="mb-3">
+                                    <h4 for="exampleInputEmail1" class="form-label text-justify">{t(`form_data.email`)}</h4>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                </div>
+                                <div class="mb-3">
+                                    <h4 for="exampleInputPassword1" class="form-label text-justify">{t(`form_data.phone`)}</h4>
+                                    <input type="tel" class="form-control" id="exampleInputPassword1" />
+                                </div>
+                                <div class="mb-3">
+                                    <h4 for="exampleInputPassword1" class="form-label text-justify">{t(`form_data.company_name`)}</h4>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" />
+                                </div>
+                                <button type="submit" class="btn btn-primary text-justify">{t(`general.send`)}</button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+            </div>
             <Footer />
         </div>
         

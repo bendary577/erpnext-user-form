@@ -51,10 +51,11 @@
       "app_development" : "special app development",
       "invoice_integration" : "E-invoice integration",
       "start_users" : "starts from 10 users",
-      "request_quote" : "request quote",
+      "request_quote" : "GET QUOTE",
       "community_support" : "community support",
-      "unlimited" : "unlimited"
-    },
+      "unlimited" : "unlimited",
+      "get_quote" : "Get Quote"
+     },
     "zakat" : {
       "title" : "Zakat and Income Authority",
       "intro" : "We offer all services to integrate your system with Zakat and income authority in Saudi Arabia",
@@ -99,5 +100,16 @@
       "benifits_2" : "Enhance the company taxation position by classifying it as a Low-Risk profile company",
       "benifits_3" : "Facilitate inter-company settlement procedures for VAT",
       "benifits_4" : "Updates and improves invoices exchanging methods between companies"
+    },
+    "general" : {
+      "send" : "send",
+      "close" : "close"
+    },
+    "form_data" : {
+      "email" : "email address",
+      "phone" : "phone number",
+      "company_name" : "company name",
+      "registration_form" : "Regisration Form",
+      "checkout" : "Checkout"
     }
   }

@@ -3,7 +3,7 @@ import '../../assets/css/plan.css';
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 
-const StandardSubscriptionPlanCard = () => {
+const StandardSubscriptionPlanCard = (props) => {
 
     const { t } = useTranslation();
 
@@ -27,7 +27,7 @@ const StandardSubscriptionPlanCard = () => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                    <Link className="link" to={{pathname:`form`, plan:`standard`}}>{t(`subscription.choose_plan`)}</Link>
+                     <Link className="link" to={{pathname:`form`, plan:`standard`}}>{t(`subscription.choose_plan`)}</Link> 
                 </div>
             </div>
         </div>
