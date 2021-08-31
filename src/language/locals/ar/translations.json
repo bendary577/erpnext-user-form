@@ -4,7 +4,10 @@
       "website" : "موقعنا",
       "subscription_plans" : "خطط الإشتراك",
       "e_invoice" : "الفاتورة الإلكترونية",
-      "zakat" : "هيئة الزكاة والدخل"
+      "zakat" : "هيئة الزكاة والدخل",
+      "change_language" :  "اللغة",
+      "arabic" : "العربية",
+      "english" : "الإنجليزية"
     },
     "form" : {
       "signup" : "التسجيل",

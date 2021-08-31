@@ -1,7 +1,7 @@
 {
   "name": "erpnext-user-form",
   "version": "0.1.0",
-  "homepage": "http://enext.cselection.com",
+  "homepage": "http://enext.cselection.net/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

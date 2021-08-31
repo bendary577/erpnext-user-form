@@ -41,7 +41,7 @@ function App() {
       <BrowserRouter>
         <Switch>
 
-          <Route exact path={["/","/form"]}>
+          <Route exact path="/form">
             <UserForm />
           </Route>
 
@@ -49,7 +49,7 @@ function App() {
             <EInvoice />
           </Route>
 
-          <Route exact path="/subscription-plans">
+          <Route exact path={["/", "/subscription-plans"]}>
             <SubscriptionPlans />
           </Route>
 

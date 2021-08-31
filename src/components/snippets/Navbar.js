@@ -30,7 +30,7 @@ const Navbar = () => {
                     <li class="nav-item active">
                         <a class="nav-link" href="zakat-authority">{t(`navbar.zakat`)}</a>
                     </li>
-                    <li class="nav-item active mx-2">
+                    <li class="nav-item active mx-2 mt-2">
                         <LanguageSwitcher />
                     </li>
                     {/*

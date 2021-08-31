@@ -4,7 +4,10 @@
       "website" : "our website",
       "subscription_plans" : "subscription plans",
       "e_invoice" : "electronic invoice",
-      "zakat" : "Zakat and Income Authority"
+      "zakat" : "Zakat and Income Authority",
+      "change_language" : "Language",
+      "arabic" : "Arabic",
+      "english" : "English"
     },
     "form" : {
         "signup" : "Signup",
