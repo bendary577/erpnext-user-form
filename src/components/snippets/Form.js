@@ -49,7 +49,7 @@ const Form = (props) => {
             console.log("client plan is " + data.plan)
             let response = await register(data);
             if(response.status === 200){
-                clearInputs();
+                //clearInputs();
                 setMessage("you have registered your website successfully");
             }else{
                 setMessage(response.data.message);
