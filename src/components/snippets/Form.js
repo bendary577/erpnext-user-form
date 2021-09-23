@@ -9,6 +9,8 @@ import { useLocation } from 'react-router-dom';
 const Form = (props) => {
 
     const location = useLocation();
+    const [companyName, setCompanyName] = useState('');
+    const [roleInCompany, setRoleInCompany] = useState('');
     const [companySubDomain, setCompanySubDomain] = useState('');
     const [businessMail, setBusinessMail] = useState('');
     const [phone, setPhone] = useState('');
@@ -36,6 +38,8 @@ const Form = (props) => {
         let validation = verifyPasswords(password, confirmPassword);
         if(validation){
             let data = {
+                company_name : companyName,
+                role : roleInCompany,
                 site_name : companySubDomain,
                 business_mail : businessMail,
                 phone,
@@ -66,6 +70,14 @@ const Form = (props) => {
             setMessage("your passwords are not identical");
             return false;
         }
+    }
+
+    const handleChangeCompanyName = (userInput) => {
+        setCompanyName(userInput)
+    }
+
+    const handleChangeRoleInCompany = (userInput) => {
+        setRoleInCompany(userInput)
     }
 
     const handleChangeCompanyDomain = (userInput) => {
@@ -112,10 +124,29 @@ const Form = (props) => {
                     { message !== '' ? <h3 className="text-danger">{message}</h3> : <></>}
 
                     <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <input type="text" id="company_name" value={companyName} onChange={(e)=> {handleChangeCompanyName(e.target.value)}} class="form-control" placeholder={t(`form.company_name`)} required/>
+                        </div>
+                    </div>
+
+                    <div class="form-check form-check-inline ms-1 mb-4 w-100">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary btn-light dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            {t(`form.role`)}
+                            </button>
+                            <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="javascript:void();"> {t(`form.manager`)}</a></li>
+                                <li><a class="dropdown-item" href="javascript:void();">{t(`form.developer`)}</a></li>
+                                <li><a class="dropdown-item" href="javascript:void();">{t(`form.hr`)}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                             <input type="email" id="subdomain" value={companySubDomain} onChange={(e)=> {handleChangeCompanyDomain(e.target.value)}} class="form-control text-align-end" placeholder={t(`form.site_name_placeholder`)} />
-                            <label class="form-label" for="subdomain">{t(`form.site_name`)}</label>
                         </div>
                     </div>
 
@@ -123,11 +154,10 @@ const Form = (props) => {
                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                             <input type="email" id="business_main" value={businessMail} onChange={(e)=> {handleChangeBusinessMain(e.target.value)}} class="form-control" placeholder={t(`form.business_mail_placeholder`)} required/>
-                            <label class="form-label" for="business_main">{t(`form.business_mail`)}</label>
                         </div>
                     </div>
 
-                    <div class="d-flex flex-row align-items-center ">
+                    <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg  fa-fw"></i>
                         <div class="form-outline flex-fill ">
                             <PhoneInput
@@ -139,7 +169,6 @@ const Form = (props) => {
                                 value={value}
                                 flags={flags}
                                 onChange={handleChangePhone}/>
-                            <label class="form-label" for="phone">{t(`form.phone`)}</label>
                         </div>
                     </div>
 
@@ -147,7 +176,6 @@ const Form = (props) => {
                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                             <input type="password" id="password" value={password} onChange={(e)=> {handleChangePassword(e.target.value)}} class="form-control" placeholder={t(`form.password_placeholder`)} required/>
-                            <label class="form-label" for="password">{t(`form.password`)}</label>
                         </div>
                     </div>
 
@@ -155,7 +183,6 @@ const Form = (props) => {
                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                             <input type="password" id="confirm_password" value={confirmPassword} onChange={(e)=> {handleChangeConfirmPassword(e.target.value)}} class="form-control" placeholder={t(`form.password_confirmation_placeholder`)} required/>
-                            <label class="form-label" for="confirm_password">{t(`form.password_confirmation`)}</label>
                         </div>
                     </div>
 
@@ -166,8 +193,8 @@ const Form = (props) => {
                         </label>
                     </div>
 
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <button type="submit" onClick={handleSubmit}  class="btn btn-primary btn-lg">{t(`form.register`)}</button>
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 w-100">
+                        <button type="submit" onClick={handleSubmit}  class="btn btn-primary btn-lg btn-block">{t(`form.register`)}</button>
                     </div>
 
                 </form>

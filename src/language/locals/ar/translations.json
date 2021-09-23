@@ -12,6 +12,11 @@
     "form" : {
       "signup" : "التسجيل",
       "site_name" : "اسم نطاق موقعك",
+      "company_name" : "اسم الشركة التابع لها",
+      "role" : "المسمي الوظيفي لك في الشركة",
+      "manager" : "مدير",
+      "developer" : "مطور",
+      "hr" : "الموارد البشرية",
       "site_name_placeholder" : "yourcompany.cselection-erpnext.com",
       "business_mail" : "البريد الإلكتروني لعملك",
       "business_mail_placeholder" : "البريد الإلكتروني",

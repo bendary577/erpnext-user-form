@@ -1,10 +1,26 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../buttons/LanguageSwitcher';
 import '../../assets/css/navbar.css';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
     const { t } = useTranslation();
+    const location = useLocation();
+    const [subscriptionActive, setSubscriptionActive] = useState(false);
+    const [eInvoiceActive, setEInvoiceActive] = useState(false);
+    const [zakatActive, setZakatActive] = useState(false) 
+
+    useEffect(()=>{
+        if(location.pathname === '/subscription-plans'){
+            setSubscriptionActive(true);
+        }else if(location.pathname === '/e-invoice'){
+            setEInvoiceActive(true)
+        }else if(location.pathname === '/zakat-authority'){
+            setZakatActive(true);
+        }
+    },[])
+
     return (
         <div className="navbar_div">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,22 +31,20 @@ const Navbar = () => {
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link nav_link" href="https://cselection.com"></a>
+
+                    <li class="nav-item">
+                        <a class="nav-link link" href="https://erpnexto.com/">{t(`navbar.website`)}</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="https://cselection.com">{t(`navbar.website`)}</a>
+                    <li class="nav-item">
+                        <a class={subscriptionActive === true ? "nav-link link active" : "nav-link link"} href="subscription-plans">{t(`navbar.subscription_plans`)}</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="subscription-plans">{t(`navbar.subscription_plans`)}</a>
+                    <li class="nav-item">
+                        <a class={eInvoiceActive === true ? "nav-link link active" : "nav-link link"} href="e-invoice">{t(`navbar.e_invoice`)}</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="e-invoice">{t(`navbar.e_invoice`)}</a>
+                    <li class="nav-item">
+                        <a class={zakatActive === true ? "nav-link link active" : "nav-link link"} href="zakat-authority">{t(`navbar.zakat`)}</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="zakat-authority">{t(`navbar.zakat`)}</a>
-                    </li>
-                    <li class="nav-item active mx-2 mt-2">
+                    <li class="nav-item mx-2 mt-2">
                         <LanguageSwitcher />
                     </li>
                     {/*

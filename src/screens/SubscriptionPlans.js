@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import StandardSubscriptionPlanCard from '../components/cards/StandardSubscriptionPlanCard';
 import CustomizationSubscriptionPlanCard from '../components/cards/CustomizationSubscriptionPlanCard';
 import '../assets/css/subscription_screen.css';
+import ballonIcon from '../assets/icons/subscription/balloon.png'
 
 const SubscriptionPlans = () => {
 
@@ -22,8 +23,14 @@ const SubscriptionPlans = () => {
                             <div class="col-lg-12 col-xl-11">
                                 <div class="card" style={{"border-radius" : "25px"}}>
                                 <div class="card-body p-md-5">
-                                    <div class="row justify-content-center">
-                                        <p class="wow animate__animated animate__backInLeft text-center text-black h1 fw-bold mb-3 mx-1 mx-md-4 mt-4">{t(`subscription.subscription_plans`)}</p>
+                                    <div class="row ">
+                                        <div class="d-flex justify-content-center">
+                                            <p class="wow animate__animated animate__backInLeft text-center text-black h1 fw-bold mb-3 mx-1 mx-md-4 mt-4">{t(`subscription.subscription_plans`)}</p>
+                                            <a class="wow animate__animated animate__backInRight btn h-50 mt-4 btn-danger" href="become-partner">
+                                                <img src={ballonIcon} style={{width:'20px', height:'20px'}} class="mx-2" alt="ballon"/>
+                                                become a partner !
+                                            </a>
+                                        </div>
                                         <h4 className="mb-4 wow animate__animated animate__backInLeft"><strong>{t(`subscription.intro`)}</strong></h4>
                                         <div class="wow animate__animated animate__backInDown d-flex justify-content-center align-items-center col-lg-3 col-md-6 col-sm-6">
                                             <FreeSubscriptionPlanCard />

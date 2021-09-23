@@ -10,7 +10,7 @@ import { FloatingButton, Item } from "react-floating-button";
 import icon from './assets/icons/zakat/kaaba.png';
 import { useTranslation } from "react-i18next";
 import PaymentForm from './screens/PaymentForm';
-
+import BecomePartner from './screens/BecomePartner';
 
 function App() {
 
@@ -59,6 +59,10 @@ function App() {
 
           <Route exact path="/payment-form">
             <PaymentForm />
+          </Route>
+
+          <Route exact path="/become-partner">
+            <BecomePartner />
           </Route>
 
         </Switch>

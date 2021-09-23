@@ -1,4 +1,9 @@
-.nav_link:hover {
-    color : red;
+.link:hover {
+    color: 'white';
     font-size: larger;
+}
+
+.active {
+    font-size: 48;
+    font-weight: bold;
 }

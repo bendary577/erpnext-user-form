@@ -20,7 +20,6 @@ const EInvoiceServiceCard = (props) => {
                         </div>
                         <a class="btn btn-info-gradiant font-14 border-0 text-white p-3 btn-block mt-3" href="#">REQUEST SERVICE</a>
                     </div>
-
                 </div>
                 </div>
             </div>

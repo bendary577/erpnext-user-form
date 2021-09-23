@@ -1,6 +1,6 @@
 {
     "navbar": {
-      "brand" : "ErpNext",
+      "brand" : "ERPNexto",
       "website" : "our website",
       "subscription_plans" : "subscription plans",
       "e_invoice" : "electronic invoice",
@@ -11,6 +11,11 @@
     },
     "form" : {
         "signup" : "Signup",
+        "company_name" : "company name",
+        "role" : "role in company",
+        "manager" : "manager",
+        "developer" : "developer",
+        "hr" : "human resources",
         "site_name" : "your site name",
         "site_name_placeholder" : "yourcompany.cselection-erpnext.com",
         "business_mail" : "your business mail",
@@ -103,6 +108,10 @@
       "benifits_2" : "Enhance the company taxation position by classifying it as a Low-Risk profile company",
       "benifits_3" : "Facilitate inter-company settlement procedures for VAT",
       "benifits_4" : "Updates and improves invoices exchanging methods between companies"
+    },
+    "bacome_partner" : {
+      "title" : "Become ERPNexto Partner",
+      "intro" : "We offer all services concerning the egyptian e-invoicing system"
     },
     "general" : {
       "send" : "send",
