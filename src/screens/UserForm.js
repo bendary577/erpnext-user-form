@@ -4,7 +4,6 @@ import Footer from '../components/snippets/Footer';
 import Form from '../components/snippets/Form';
 import StepperComponent from '../components/buttons/StepperComponent';
 import CardForm from '../components/snippets/CardForm';
-import { useEffect } from 'react/cjs/react.development';
 import { useLocation } from 'react-router-dom';
 
 const UserForm = () => {
@@ -15,10 +14,6 @@ const UserForm = () => {
     const setCurrentStep = (value) => {
         setStep(value);
     }
-
-    useEffect(()=>{
-        console.log("in user form plan is " + location.plan)
-    }, [])
     
     return (
         <div className="user_form_div">

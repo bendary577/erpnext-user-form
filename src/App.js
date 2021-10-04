@@ -10,6 +10,7 @@ import { FloatingButton, Item } from "react-floating-button";
 import icon from './assets/icons/zakat/kaaba.png';
 import { useTranslation } from "react-i18next";
 import PaymentForm from './screens/PaymentForm';
+import Microsoft365 from './screens/Microsoft365';
 import BecomePartner from './screens/BecomePartner';
 
 function App() {
@@ -41,16 +42,20 @@ function App() {
       <BrowserRouter>
         <Switch>
 
-          <Route exact path="/form">
-            <UserForm />
+          <Route exact path={["/", "/subscription-plans"]}>
+            <SubscriptionPlans />
+          </Route>
+
+          <Route exact path="/erpnexto-365">
+            <Microsoft365 />
           </Route>
 
           <Route exact path="/e-invoice">
             <EInvoice />
           </Route>
 
-          <Route exact path={["/", "/subscription-plans"]}>
-            <SubscriptionPlans />
+          <Route exact path="/form">
+            <UserForm />
           </Route>
 
           <Route exact path="/zakat-authority">

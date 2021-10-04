@@ -1,8 +1,9 @@
 {
     "navbar": {
-      "brand" : "ErpNext",
+      "brand" : "ERPNexto",
       "website" : "موقعنا",
       "subscription_plans" : "خطط الإشتراك",
+      "microsoft" : "مايكروسوفت 365",
       "e_invoice" : "الفاتورة الإلكترونية",
       "zakat" : "هيئة الزكاة والدخل",
       "change_language" :  "اللغة",
@@ -61,7 +62,17 @@
       "request_quote" : "اطلب عرض سعر",
       "community_support" : "دعم فني عبر مجموعاتنا",
       "unlimited" : "غير محدود",
-      "get_quote" : "اطلب عرض سعر"
+      "get_quote" : "اطلب عرض سعر",
+      "become_partner" : "طلب شراكة"
+    },
+    "microsoft" : {
+      "erpnexto365" : "ERPNexto Office 365 Plans",
+      "erpnexto365_intro" : "ارتق بإنتاجيتك إلى مستوى جديد تمامًا مع الحزمة الكاملة من ERPNexto مع Microsoft Office 365 و Microsoft Teams",
+      "standard" : "Standard Plan",
+      "premium" : "Nexto 365 Plan",
+      "standard_business" : "Microsoft 365 Standard Business",
+      "standard_business_description" : "الأفضل للشركات التي تحتاج إلى حلول سهلة عن بُعد ، مع Microsoft Teams ، والتخزين السحابي الآمن ، و Office Online (لا يتم تضمين إصدارات سطح المكتب).",
+      "premium_business" : "Microsoft 365 Premium Business"
     },
     "zakat" : {
       "title" : "هيئة الزكاة والدخل",
@@ -108,6 +119,24 @@
       "benifits_2" : "تعزيز الموقف الضريبي للشركة من خلال تصنيفها كشركة منخفضة المخاطر",
       "benifits_3" : "تسهيل إجراءات التسوية بين الشركات لضريبة القيمة المضافة",
       "benifits_4" : "تحديث وتحسين طرق تبادل الفواتير بين الشركات"
+    },
+    "bacome_partner" : {
+      "title" : "كن شريك ERPNexto",
+      "intro" : "فقط خذ زمام المبادرة وطور مجهودك ، وسيقوم ERPNexto بالباقي",
+      "frappe_developer" : "Frappe مطور",
+      "frappe_developer_intro" : "إذا كنت تتمتع بمهارات عالية في البايثون والجافاسكريبت .. فنحن نحتاجك",
+      "good_python" : "خبرة جيدة في مهارات python",
+      "good_javascript" : "خبرة في الجافاسكريبت",
+      "good_mongodb" : "مهارات قاعدة بيانات mongodb",
+      "good_frappe" : "تجربة عملية مع إطار عمل Frappe",
+      "send_cv" : "أرسل سيرتك الذاتية",
+      "request_technical_partnership" : "طلب شراكة فنية",
+      "implementation_partner" : "شريك التنفيذ",
+      "implementation_partner_intro" : "سيوفر لك ERPNexto جميع الأدوات والبنية التحتية للبيئة التي تحتاجها لبدء تنفيذ ERPNexto",
+      "full_name" : "الاسم بالكامل",
+      "company_name" : "اسم الشركة",
+      "business_mail" : "بريد العمل",
+      "request_implementation_partnership" : "طلب شراكة التنفيذ"
     },
     "general" : {
       "send" : "أرسل",

@@ -8,6 +8,7 @@ const Navbar = () => {
     const { t } = useTranslation();
     const location = useLocation();
     const [subscriptionActive, setSubscriptionActive] = useState(false);
+    const [microsoftActive, setMicrosoftActive] = useState(false);
     const [eInvoiceActive, setEInvoiceActive] = useState(false);
     const [zakatActive, setZakatActive] = useState(false) 
 
@@ -18,6 +19,8 @@ const Navbar = () => {
             setEInvoiceActive(true)
         }else if(location.pathname === '/zakat-authority'){
             setZakatActive(true);
+        }else if(location.pathname === '/erpnexto-365'){
+            setMicrosoftActive(true);
         }
     },[])
 
@@ -37,6 +40,9 @@ const Navbar = () => {
                     </li>
                     <li class="nav-item">
                         <a class={subscriptionActive === true ? "nav-link link active" : "nav-link link"} href="subscription-plans">{t(`navbar.subscription_plans`)}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class={microsoftActive === true ? "nav-link link active" : "nav-link link"} href="erpnexto-365">{t(`navbar.microsoft`)}</a>
                     </li>
                     <li class="nav-item">
                         <a class={eInvoiceActive === true ? "nav-link link active" : "nav-link link"} href="e-invoice">{t(`navbar.e_invoice`)}</a>

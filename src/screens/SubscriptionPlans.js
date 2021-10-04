@@ -28,7 +28,7 @@ const SubscriptionPlans = () => {
                                             <p class="wow animate__animated animate__backInLeft text-center text-black h1 fw-bold mb-3 mx-1 mx-md-4 mt-4">{t(`subscription.subscription_plans`)}</p>
                                             <a class="wow animate__animated animate__backInRight btn h-50 mt-4 btn-danger" href="become-partner">
                                                 <img src={ballonIcon} style={{width:'20px', height:'20px'}} class="mx-2" alt="ballon"/>
-                                                become a partner !
+                                                {t('subscription.become_partner')}
                                             </a>
                                         </div>
                                         <h4 className="mb-4 wow animate__animated animate__backInLeft"><strong>{t(`subscription.intro`)}</strong></h4>

@@ -2,7 +2,8 @@
     "navbar": {
       "brand" : "ERPNexto",
       "website" : "our website",
-      "subscription_plans" : "subscription plans",
+      "subscription_plans" : "ErpNexto Pricing plans",
+      "microsoft" : "ERPNexto 365 Pricing Plans",
       "e_invoice" : "electronic invoice",
       "zakat" : "Zakat and Income Authority",
       "change_language" : "Language",
@@ -62,7 +63,17 @@
       "request_quote" : "GET QUOTE",
       "community_support" : "community support",
       "unlimited" : "unlimited",
-      "get_quote" : "Get Quote"
+      "get_quote" : "Get Quote",
+      "become_partner" : "become partner"
+     },
+     "microsoft" : {
+       "erpnexto365" : "ERPNexto Office 365 Plans",
+       "erpnexto365_intro" : "take your productivity to a whole new level with the full package of ERPNexto with Microsoft office 365 and Microsoft Teams",
+       "standard" : "Standard Plan",
+       "premium" : "Nexto 365 Plan",
+       "standard_business" : "Microsoft 365 Standard Business",
+       "standard_business_description" : "Best for businesses that need easy remote solutions, with Microsoft Teams, secure cloud storage, and Office Online (desktop versions not included).",
+       "premium_business" : "Microsoft 365 Premium Business"
      },
     "zakat" : {
       "title" : "Zakat and Income Authority",
@@ -111,7 +122,21 @@
     },
     "bacome_partner" : {
       "title" : "Become ERPNexto Partner",
-      "intro" : "We offer all services concerning the egyptian e-invoicing system"
+      "intro" : "Just take the initiative and boost your efforts, and ERPNexto will handle the rest",
+      "frappe_developer" : "Frappe Developer",
+      "frappe_developer_intro" : "if you're a highly skilled python developer, somehow love javascript and thinks all the night about frappe ! then we need to talk",
+      "good_python" : "good experience of Python coding skills",
+      "good_javascript" : "Knowledge of javascript ins and outs",
+      "good_mongodb" : "Solid mongodb database skills",
+      "good_frappe" : "hands-on experience with the Frappe framework",
+      "send_cv" : "send your CV",
+      "request_technical_partnership" : "Request Technical Partnership",
+      "implementation_partner" : "Implementation Partner",
+      "implementation_partner_intro" : "ERPNexto will provide you with all tools and environment infrastructure you need to start your ERPNexto implementation",
+      "full_name" : "full name",
+      "company_name" : "company name",
+      "business_mail" : "business mail",
+      "request_implementation_partnership" : "Request Implementation Partnership"
     },
     "general" : {
       "send" : "send",

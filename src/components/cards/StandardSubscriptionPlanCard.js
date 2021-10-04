@@ -12,7 +12,7 @@ const StandardSubscriptionPlanCard = (props) => {
             <div class="pricingTable green p-4" style={{height:'580px'}}>
                 <div class="pricingTable-header">
                     <i class="fa fa-briefcase"></i>
-                    <div class="price-value"> $10.00 <span class="month">{t(`subscription.per_month`)}</span> </div>
+                    <div class="price-value"> $5.00 <span class="month">{t(`subscription.per_month`)}</span> </div>
                 </div>
                 <h3 class="heading">{t(`subscription.standard_plan`)}</h3>
                 <div class="pricing-content">
