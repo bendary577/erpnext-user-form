@@ -68,8 +68,8 @@
     "microsoft" : {
       "erpnexto365" : "ERPNexto Office 365 Plans",
       "erpnexto365_intro" : "ارتق بإنتاجيتك إلى مستوى جديد تمامًا مع الحزمة الكاملة من ERPNexto مع Microsoft Office 365 و Microsoft Teams",
-      "standard" : "Standard Plan",
-      "premium" : "Nexto 365 Plan",
+      "standard" : "الخطة العادية",
+      "premium" : "خطة نيكستو 365",
       "standard_business" : "Microsoft 365 Standard Business",
       "standard_business_description" : "الأفضل للشركات التي تحتاج إلى حلول سهلة عن بُعد ، مع Microsoft Teams ، والتخزين السحابي الآمن ، و Office Online (لا يتم تضمين إصدارات سطح المكتب).",
       "premium_business" : "Microsoft 365 Premium Business"

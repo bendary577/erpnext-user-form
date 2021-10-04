@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../assets/css/plan.css';
 import { useTranslation } from 'react-i18next';
-import falseIcon from '../../assets/icons/subscription/false.png';
 import { Link } from "react-router-dom";
 import teamsIcon from '../../assets/icons/microsoft/teams.png';
 import sharepointIcon from '../../assets/icons/microsoft/sharePoint.png';
@@ -107,7 +106,7 @@ const OfficePremiumPlanCard = () => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                    <Link className="link" to={{pathname:`form`, plan:`free`}}>{t(`subscription.choose_plan`)}</Link>
+                    <Link className="link" to={{pathname:`form`, plan:`microsoft_nexto_365`}}>{t(`subscription.choose_plan`)}</Link>
                 </div>
             </div>
         </div>

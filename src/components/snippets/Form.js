@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {register} from '../../services/requests';
 import { useTranslation } from 'react-i18next';
 import 'react-phone-number-input/style.css';
-import PhoneInput from 'react-phone-number-input';
+import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
 import { useLocation } from 'react-router-dom';
 
@@ -24,12 +24,15 @@ const Form = (props) => {
     
     useEffect(()=>{
         if(location.plan === 'free'){
-            console.log("client plan is " + location.plan)
             setPlan('free')
         }else if(plan === 'standard'){
             setPlan('standard')
-        }else{
+        }else if(plan === 'premium'){
             setPlan('premium')
+        }else if(plan === 'microsoft_standard'){
+            setPlan('microsoft_standard')
+        }else if(plan === 'microsoft_nexto_365'){
+            setPlan('microsoft_nexto_365')
         }
     }, [])
 
@@ -46,15 +49,11 @@ const Form = (props) => {
                 password,
                 plan
             }
-            console.log("client site is " + data.site_name)
-            console.log("client mail is " + data.business_mail)
-            console.log("client phone is " + data.phone)
-            console.log("client pass is " + data.password)
-            console.log("client plan is " + data.plan)
             let response = await register(data);
             if(response.status === 200){
                 //clearInputs();
                 setMessage("you have registered your website successfully");
+                //props.setCurrentStep(1)
             }else{
                 setMessage(response.data.message);
             }
@@ -201,7 +200,6 @@ const Form = (props) => {
 
             </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
                     <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png" class="img-fluid" alt="Sample image" />
                 </div>
             </div>

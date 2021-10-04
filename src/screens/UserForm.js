@@ -18,34 +18,34 @@ const UserForm = () => {
     return (
         <div className="user_form_div">
             <Navbar />
-                <div className="form_div" style={{"background-color" : "#eee"}}>
+            <div className="form_div" style={{"background-color" : "#eee"}}>
                 <section className="py-5" >
                     <div class="container">
                         <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col-lg-12 col-xl-11">
-                            <div class="card text-black" style={{"border-radius" : "25px"}}>
-                                <div class="card-body p-md-5">
-                                    {
-                                        location.plan === 'free' ?
-                                            <Form setCurrentStep={setCurrentStep} />
-                                        :
-                                        <div className="">
-                                            <div className="stepper">
-                                                <StepperComponent setCurrentStep={setCurrentStep} activeStep={step}/>
+                            <div class="col-lg-12 col-xl-11">
+                                <div class="card text-black" style={{"border-radius" : "25px"}}>
+                                    <div class="card-body p-md-5">
+                                        {
+                                            location.plan === 'free' ?
+                                                <Form setCurrentStep={setCurrentStep} />
+                                            :
+                                            <div className="">
+                                                <div className="stepper">
+                                                    <StepperComponent setCurrentStep={setCurrentStep} activeStep={step}/>
+                                                </div>
+                                                <div className="action">
+                                                    {
+                                                        step === 0 ?
+                                                            <Form setCurrentStep={setCurrentStep} />
+                                                        :
+                                                            <CardForm setCurrentStep={setCurrentStep} plan={location.plan}  />
+                                                    }
+                                                </div>
                                             </div>
-                                            <div className="action">
-                                                {
-                                                    step === 0 ?
-                                                        <Form setCurrentStep={setCurrentStep} />
-                                                    :
-                                                        <CardForm setCurrentStep={setCurrentStep} />
-                                                }
-                                            </div>
-                                        </div>
-                                    }
+                                        }
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </section>

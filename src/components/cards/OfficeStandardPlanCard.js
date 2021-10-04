@@ -18,7 +18,7 @@ const OfficeStandardPlanCard = () => {
                     <i class="fa fa-adjust"></i>
                     <div class="price-value"> $10.00 <span class="month">{t(`subscription.per_month`)}</span> </div>
                 </div>
-                <h3 class="heading">{t(`subscription.standard_plan`)}</h3>
+                <h3 class="heading">{t(`microsoft.standard`)}</h3>
                 <div class="pricing-content">
                     <ul>
                         <li>{t(`subscription.all_modules`)}</li>
@@ -30,7 +30,7 @@ const OfficeStandardPlanCard = () => {
                         <li>{t(`subscription.weekly_backup`)}</li>
                         <li><h5 className="mt-2 text-dark">{t(`microsoft.standard_business`)}</h5></li>
                         <li>
-                            <div className="d-flex justify-content-center align-content-center mb-2 mt-2" style={{height : '325px'}}>
+                            <div className="d-flex justify-content-center align-content-center mb-2 mt-2" style={{height : '332px'}}>
                                <p>{t(`microsoft.standard_business_description`)}</p>
                             </div>
                         </li>
@@ -63,7 +63,7 @@ const OfficeStandardPlanCard = () => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                    <Link className="link" to={{pathname:`form`, plan:`free`}}>{t(`subscription.choose_plan`)}</Link>
+                    <Link className="link" to={{pathname:`form`, plan:`microsoft_standard`}}>{t(`subscription.choose_plan`)}</Link>
                 </div>
             </div>
         </div>

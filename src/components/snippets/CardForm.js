@@ -11,7 +11,7 @@ const CardForm = (props) => {
     const { t } = useTranslation();
 
     useEffect(()=>{
-        authenticate();
+        authenticate(props.plan);
     }, [])
 
     return (
