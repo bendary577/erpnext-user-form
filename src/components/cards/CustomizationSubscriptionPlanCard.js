@@ -13,6 +13,7 @@ const CustomizationSubscriptionPlanCard = (props) => {
                 <div class="pricingTable-header">
                     <i class="fa fa-cube"></i>
                 <div class="price-value">
+                    <h6 className="text-dark">{t(`subscription.special_customization`)}</h6>
                     <img className="mb-1" src={questionIcon} style={{width:"70px", height:"70px"}} alt="" />
                 </div>
                 </div>

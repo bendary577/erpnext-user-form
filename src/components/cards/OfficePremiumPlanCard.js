@@ -20,10 +20,17 @@ const OfficePremiumPlanCard = () => {
 
     return (
         <div className="subscription_plan_card_div w-100">
-            <div class="pricingTable green p-4" style={{height:'1150px'}}>
+            <div class="pricingTable green p-4" style={{height:'1200px'}}>
                 <div class="pricingTable-header">
                     <i class="fa fa-adjust"></i>
-                    <div class="price-value"> $20.00 <span class="month">{t(`subscription.per_month`)}</span> </div>
+                    <div class="price-value"> 
+                        <div className="d-flex justify-content-center">
+                            $20.00
+                            <h5 className="mt-3"><small>{t(`subscription.per_user`)}</small></h5>
+                        </div>
+                        <h6 className="text-danger">{t(`subscription.after`)} <del>$35.00</del></h6>
+                        <span class="month">{t(`subscription.per_month`)}</span>
+                    </div>
                 </div>
                 <h3 class="heading">{t(`microsoft.premium`)}</h3>
                 <div class="pricing-content">
