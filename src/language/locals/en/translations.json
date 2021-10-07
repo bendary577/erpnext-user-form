@@ -72,8 +72,8 @@
      "microsoft" : {
        "erpnexto365" : "ERPNexto Office 365 Plans",
        "erpnexto365_intro" : "take your productivity to a whole new level with the full package of ERPNexto with Microsoft office 365 and Microsoft Teams",
-       "standard" : "Standard Plan",
-       "premium" : "Nexto 365 Plan",
+       "standard" : "Nexto 365 Basic ",
+       "premium" : "Nexto 365 Standard",
        "standard_business" : "Microsoft 365 Standard Business",
        "standard_business_description" : "Best for businesses that need easy remote solutions, with Microsoft Teams, secure cloud storage, and Office Online (desktop versions not included).",
        "premium_business" : "Microsoft 365 Premium Business"
