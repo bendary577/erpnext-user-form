@@ -2,8 +2,14 @@
     "API_KEY": "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6VXhNaUo5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2libUZ0WlNJNkltbHVhWFJwWVd3aUxDSndjbTltYVd4bFgzQnJJam81TVRNeGZRLmplRTFlSjBEZHNvNG5zSkc5Q1pCaW93bGdlRmxfV2JEZDZuUGpJNXhvTkt3aWJEZk5HZXlnRXFmTW5rQnl2SkdSbzRBdXhRckpRTVdoWkk3NkUycGZn",
     "STANDARD_PLAN_NAME" : "Standard Plan",
     "STANDARD_PLAN_DESCRIPTION" : "Standard Plan",
-    "STANDARD_PLAN_PRICE" : "1000",
+    "STANDARD_PLAN_PRICE" : "5",
     "PREMIUM_PLAN" : "premium plan",
     "PREMIUM_PLAN_DESCRIPTION" : "premium plan",
-    "PREMIUM_PLAN_PRICE" : "1500"
+    "PREMIUM_PLAN_PRICE" : "10",
+    "MICROSOFT_STANDARD_PLAN" : "microsoft standard plan",
+    "MICROSOFT_STANDARD_PLAN_DESCRIPTION" : "microsoft standard plan",
+    "MICROSOFT_STANDARD_PLAN_PRICE" : "10",
+    "MICROSOFT_NEXTO_365_PLAN" : "microsoft nexto 365 plan",
+    "MICROSOFT_NEXTO_365_PLAN_DESCRIPTION" : "microsoft nexto 365 plan",
+    "MICROSOFT_NEXTO_365_PLAN_PRICE" : "20"
 }

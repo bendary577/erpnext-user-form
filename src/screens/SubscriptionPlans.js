@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import FreeSubscriptionPlanCard from '../components/cards/FreeSubscriptionPlanCard';
 import PremiumSubscriptionPlanCard from '../components/cards/PremiumSubscriptionPlanCard';
 import Footer from '../components/snippets/Footer';
@@ -8,10 +8,42 @@ import StandardSubscriptionPlanCard from '../components/cards/StandardSubscripti
 import CustomizationSubscriptionPlanCard from '../components/cards/CustomizationSubscriptionPlanCard';
 import '../assets/css/subscription_screen.css';
 import ballonIcon from '../assets/icons/subscription/balloon.png'
+import {sendCustomizationPlanQuote} from '../services/requests';
 
 const SubscriptionPlans = () => {
 
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [companyName, setCompanyName] = useState('');
+    const [message, setMessage] = useState('');
     const { t } = useTranslation();
+
+    const handleChangeEmail= (userInput) => {
+        setEmail(userInput)
+    }
+
+    const handleChangePhone = (userInput) => {
+        setPhone(userInput)
+    }
+
+    const handleChangeCompanyName = (userInput) => {
+        setCompanyName(userInput)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        let data = {
+            email,
+            phone,
+            companyName
+        }
+        let response = await sendCustomizationPlanQuote(data);
+        if(response.status === 200){
+            setMessage("you have sent your quote successfully");
+        }else{
+            setMessage(response.data.message);
+        }
+    }
 
     return (
         <div>
@@ -60,20 +92,20 @@ const SubscriptionPlans = () => {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
                         </div>
                         <div class="modal-body text-left">
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <div class="mb-3">
-                                    <h4 for="exampleInputEmail1" class="form-label text-justify">{t(`form_data.email`)}</h4>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                    <h4 for="email" class="form-label text-justify">{t(`form_data.email`)}</h4>
+                                    <input type="email" class="form-control" name="email" id="email" value={email} onChange={(e)=> {handleChangeEmail(e.target.value)}} aria-describedby="emailHelp" />
                                 </div>
                                 <div class="mb-3">
-                                    <h4 for="exampleInputPassword1" class="form-label text-justify">{t(`form_data.phone`)}</h4>
-                                    <input type="tel" class="form-control" id="exampleInputPassword1" />
+                                    <h4 for="phone" class="form-label text-justify">{t(`form_data.phone`)}</h4>
+                                    <input type="tel" value={phone} name="phone" onChange={(e)=> {handleChangePhone(e.target.value)}} class="form-control" id="phone" />
                                 </div>
                                 <div class="mb-3">
-                                    <h4 for="exampleInputPassword1" class="form-label text-justify">{t(`form_data.company_name`)}</h4>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" />
+                                    <h4 for="companyName"  class="form-label text-justify">{t(`form_data.company_name`)}</h4>
+                                    <input type="text" value={companyName} name="companyName" onChange={(e)=> {handleChangeCompanyName(e.target.value)}} class="form-control" id="companyName" />
                                 </div>
-                                <button type="submit" class="btn btn-primary text-justify">{t(`general.send`)}</button>
+                                <button type="submit"onClick={handleSubmit} class="btn btn-primary text-justify">{t(`general.send`)}</button>
                             </form>
                         </div>
                         </div>

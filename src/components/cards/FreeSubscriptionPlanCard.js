@@ -13,13 +13,17 @@ const FreeSubscriptionPlanCard = () => {
             <div class="pricingTable p-4" style={{height:'580px'}}>
                 <div class="pricingTable-header">
                     <i class="fa fa-adjust"></i>
-                    <div class="price-value"> $0.00 <span class="month">{t(`subscription.per_month`)}</span> </div>
+                    <div class="price-value"> 
+                        <h6 className="text-danger">{t(`subscription.erpnexto_offer`)}</h6> 
+                        $0.00 
+                        <span class="month">{t(`subscription.per_month`)}</span> 
+                    </div>
                 </div>
                 <h3 class="heading">{t(`subscription.free_plan`)}</h3>
                 <div class="pricing-content">
                     <ul>
                         <li>{t(`subscription.all_modules`)}</li>
-                        <li>3 {t(`subscription.users`)}</li>
+                        <li>{t(`subscription.free_users`)}</li>
                         <li>{t(`subscription.security_updates`)}</li>
                         <li>{t(`subscription.server_monitoring`)}</li>
                         <li>{t(`subscription.community_support`)}</li>

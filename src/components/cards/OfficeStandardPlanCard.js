@@ -13,16 +13,23 @@ const OfficeStandardPlanCard = () => {
 
     return (
         <div className="subscription_plan_card_div w-100">
-            <div class="pricingTable blue p-4" style={{height:'1150px'}}>
+            <div class="pricingTable blue p-4" style={{height:'1200px'}}>
                 <div class="pricingTable-header">
                     <i class="fa fa-adjust"></i>
-                    <div class="price-value"> $10.00 <span class="month">{t(`subscription.per_month`)}</span> </div>
+                    <div class="price-value"> 
+                        <div className="d-flex justify-content-center">
+                            $10.00
+                            <h5 className="mt-3"><small>{t(`subscription.per_user`)}</small></h5>
+                        </div>
+                        <h6 className="text-danger">{t(`subscription.after`)} <del>$15.00</del></h6>
+                        <span class="month">{t(`subscription.per_month`)}</span>
+                    </div>
                 </div>
-                <h3 class="heading">{t(`subscription.standard_plan`)}</h3>
+                <h3 class="heading">{t(`microsoft.standard`)}</h3>
                 <div class="pricing-content">
                     <ul>
                         <li>{t(`subscription.all_modules`)}</li>
-                        <li>8 {t(`subscription.users`)}</li>
+                        <li>{t(`subscription.users`)}</li>
                         <li>{t(`subscription.security_updates`)}</li>
                         <li>{t(`subscription.server_monitoring`)}</li>
                         <li>{t(`subscription.product_warranty`)}</li>
@@ -30,7 +37,7 @@ const OfficeStandardPlanCard = () => {
                         <li>{t(`subscription.weekly_backup`)}</li>
                         <li><h5 className="mt-2 text-dark">{t(`microsoft.standard_business`)}</h5></li>
                         <li>
-                            <div className="d-flex justify-content-center align-content-center mb-2 mt-2" style={{height : '325px'}}>
+                            <div className="d-flex justify-content-center align-content-center mb-2 mt-2" style={{height : '332px'}}>
                                <p>{t(`microsoft.standard_business_description`)}</p>
                             </div>
                         </li>
@@ -63,7 +70,7 @@ const OfficeStandardPlanCard = () => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                    <Link className="link" to={{pathname:`form`, plan:`free`}}>{t(`subscription.choose_plan`)}</Link>
+                    <Link className="link" to={{pathname:`form`, plan:`microsoft_standard`}}>{t(`subscription.choose_plan`)}</Link>
                 </div>
             </div>
         </div>

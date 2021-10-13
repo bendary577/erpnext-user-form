@@ -2,7 +2,6 @@ import React from 'react';
 import '../../assets/css/subscription_plan_card.css';
 import { useTranslation } from 'react-i18next';
 import questionIcon from '../../assets/icons/subscription/question.png';
-import { Link } from "react-router-dom";
 
 const CustomizationSubscriptionPlanCard = (props) => {
 
@@ -14,6 +13,7 @@ const CustomizationSubscriptionPlanCard = (props) => {
                 <div class="pricingTable-header">
                     <i class="fa fa-cube"></i>
                 <div class="price-value">
+                    <h6 className="text-dark">{t(`subscription.special_customization`)}</h6>
                     <img className="mb-1" src={questionIcon} style={{width:"70px", height:"70px"}} alt="" />
                 </div>
                 </div>
@@ -32,8 +32,6 @@ const CustomizationSubscriptionPlanCard = (props) => {
                 <div class="pricingTable-signup">
                     <a type="button" className="link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{t(`subscription.request_quote`)} </a>
                 </div>
-                {/* ---------------------------------- send message qoute modal --------------------------------- */}
-
             </div>
         </div>
     )

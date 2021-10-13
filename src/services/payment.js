@@ -3,7 +3,7 @@ import { PAYMENT_AUTH_API, REGISTER_ORDER_API, GET_PAYMENT_KEY_API } from "./api
 import paymentConfig from '../config/paymentConfig.json';
 
 
-    export const authenticate = async () => {
+    export const authenticate = async (plan) => {
         try{
             let data = {
                 api_key : paymentConfig.API_KEY
@@ -11,7 +11,7 @@ import paymentConfig from '../config/paymentConfig.json';
             let response = await axiosPaymentInstance.post(PAYMENT_AUTH_API, data);
             if(response.status === 201){
                 localStorage.setItem("payment_authentication_token", response.data.token);
-                registerOrder();
+                registerOrder(plan);
             }else{
                 console.log(response.data.error)
             }
@@ -22,27 +22,46 @@ import paymentConfig from '../config/paymentConfig.json';
 
     export const registerOrder = async (plan) => {
         console.log("mercahnt id is " + generateMerchantId(12))
+        let planName = "";
+        let planDescription = "";
+        let planPrice = "";
+        if(plan === 'standard'){
+            planName = paymentConfig.STANDARD_PLAN_NAME;
+            planDescription = paymentConfig.STANDARD_PLAN_DESCRIPTION;
+            planPrice = paymentConfig.STANDARD_PLAN_PRICE;
+        }else if(plan === 'premium'){
+            planName = paymentConfig.STANDARD_PLAN_NAME;
+            planDescription = paymentConfig.STANDARD_PLAN_DESCRIPTION;
+            planPrice = paymentConfig.STANDARD_PLAN_PRICE;
+        }else if(plan === 'microsoft_standard'){
+            planName = paymentConfig.MICROSOFT_STANDARD_PLAN;
+            planDescription = paymentConfig.MICROSOFT_STANDARD_PLAN_DESCRIPTION;
+            planPrice = paymentConfig.MICROSOFT_STANDARD_PLAN_PRICE;
+        }else if(plan === 'microsoft_nexto_365'){
+            planName = paymentConfig.MICROSOFT_NEXTO_365_PLAN;
+            planDescription = paymentConfig.MICROSOFT_NEXTO_365_PLAN_DESCRIPTION;
+            planPrice = paymentConfig.MICROSOFT_NEXTO_365_PLAN_PRICE;
+        }
         try{
             let request_data = {
                 auth_token: localStorage.getItem("payment_authentication_token"),
                 delivery_needed : "false",
-                amount_cents : paymentConfig.STANDARD_PLAN_PRICE,
+                amount_cents : planPrice,
                 currency : "EGP",
                 merchant_order_id : generateMerchantId(12) ,
                 items : [
                         {
-                            name: paymentConfig.STANDARD_PLAN_NAME,
-                            amount_cents: paymentConfig.STANDARD_PLAN_PRICE,
-                            description: paymentConfig.STANDARD_PLAN_DESCRIPTION,
+                            name: planName,
+                            amount_cents: planPrice,
+                            description: planDescription,
                             quantity: "1"
                         }
                     ]
                 }
             let response = await axiosPaymentInstance.post(REGISTER_ORDER_API, request_data);
-            console.log(response.status);
             if(response.status === 200 || response.status === 201){
                 localStorage.setItem("payment_order_id", response.data.id);
-                getPaymentKey();
+                getPaymentKey(planPrice);
             }else{
                 console.log(response.data.error)
             }
@@ -51,13 +70,12 @@ import paymentConfig from '../config/paymentConfig.json';
         }
     }
 
-    export const getPaymentKey = async () => {
+    export const getPaymentKey = async (planPrice) => {
         let order_id = localStorage.getItem("payment_order_id");
-        console.log("payment order id " + order_id)
         try{
             let request_data = {
                 auth_token: localStorage.getItem("payment_authentication_token"),
-                amount_cents: paymentConfig.STANDARD_PLAN_PRICE, 
+                amount_cents: planPrice, 
                 expiration: 3600, 
                 order_id: localStorage.getItem("payment_order_id"),
                 billing_data: {
@@ -79,13 +97,8 @@ import paymentConfig from '../config/paymentConfig.json';
                 integration_id: 15964,
                 lock_order_when_paid: "false"
             }
-            console.log("payment token is " + request_data.auth_token)
-            console.log("payment order is " + request_data.order_id)
             let response = await axiosPaymentInstance.post(GET_PAYMENT_KEY_API, request_data);
-            console.log("response status" + response.status);
             if(response.status === 200 || response.status === 201 ){
-                console.log("payment response success" + response.data);
-                console.log("payment response token" + response.data.token);
                 localStorage.setItem("payment_token", response.data.token);
             }else{
                 console.log(response.data)

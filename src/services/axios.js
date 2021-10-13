@@ -2,14 +2,10 @@ import axios from 'axios';
 
 //--------------------------------------- create axios instance -------------------------------
 //axios instance to send unauthenticated requests
-export const axiosInstance = axios.create({
-    withCredentials: false
-})
+export const axiosInstance = axios.create({})
 
 //axios instance to send unauthenticated requests
-export const axiosPaymentInstance = axios.create({
-    withCredentials: false
-})
+export const axiosPaymentInstance = axios.create({})
 
 //--------------------------------------- axios request interceptors -------------------------------
 axiosInstance.interceptors.request.use(async (req) => {
