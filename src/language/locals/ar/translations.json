@@ -152,6 +152,8 @@
       "company_name" : "اسم الشركة",
       "registration_form" : "التسجيل",
       "checkout" : "الدفع",
-      "installation" : "إنشاء الموقع"
+      "confirmation" : "التحقق",
+      "installation" : "إنشاء الموقع",
+      "confirm_data" : "تأكيد البريد الالكتروني"
     }
   }

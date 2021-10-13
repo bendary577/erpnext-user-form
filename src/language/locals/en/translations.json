@@ -151,6 +151,8 @@
       "company_name" : "company name",
       "registration_form" : "Regisration Form",
       "checkout" : "Checkout",
-      "installation" : "Site Installation"
+      "confirmation" : "Confirmation",
+      "installation" : "Site Installation",
+      "confirm_data" : "Confirm your Email"
     }
   }

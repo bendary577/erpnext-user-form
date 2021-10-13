@@ -6,6 +6,7 @@ import StepperComponent from '../components/buttons/StepperComponent';
 import CardForm from '../components/snippets/CardForm';
 import { useLocation } from 'react-router-dom';
 import SiteInstallation from './SiteInstallation';
+import ConfirmationScreen from './ConfirmationScreen';
 
 const UserForm = () => {
 
@@ -46,7 +47,12 @@ const UserForm = () => {
                                                         step === 1 ? 
                                                         <Form setCurrentStep={setCurrentStep} />   
                                                         :
+                                                        step === 2 ?
+                                                        <ConfirmationScreen setCurrentStep={setCurrentStep}/>
+                                                        
+                                                        :
                                                         <SiteInstallation />
+                                                        
                                                     }
                                                 </div>
                                             </div>

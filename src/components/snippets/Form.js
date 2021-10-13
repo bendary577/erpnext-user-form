@@ -37,7 +37,9 @@ const Form = (props) => {
     }, [])
 
     const handleSubmit = async (e) => {
+        props.setCurrentStep(2)
         e.preventDefault();
+        /*
         let validation = verifyPasswords(password, confirmPassword);
         if(validation){
             let data = {
@@ -61,6 +63,7 @@ const Form = (props) => {
         }else{
 
         }
+        */
     }
 
     const verifyPasswords = (password, confirmPassword) => {
