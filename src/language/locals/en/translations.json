@@ -13,7 +13,7 @@
     "form" : {
         "signup" : "Signup",
         "company_name" : "company name",
-        "role" : "role in company",
+        "role" : "Role in company",
         "manager" : "manager",
         "developer" : "developer",
         "hr" : "human resources",
@@ -24,12 +24,12 @@
         "phone" : "your phone",
         "phone_placeholder" : "phone",
         "password" : "your password",
-        "password_placeholder" : "password",
+        "password_placeholder" : "your site password",
         "password_confirmation" : "repeat your password",
         "password_confirmation_placeholder" : "password confirmation",
         "agree" : "i agree to all",
         "terms_and_service" : "terms of service",
-        "register" : "Register"
+        "register" : "Start Installation"
     },
     "subscription" : {
       "subscription_plans" : "subscription plans",
@@ -147,6 +147,7 @@
       "phone" : "phone number",
       "company_name" : "company name",
       "registration_form" : "Regisration Form",
-      "checkout" : "Checkout"
+      "checkout" : "Checkout",
+      "installation" : "Site Installation"
     }
   }

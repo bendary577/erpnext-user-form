@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Navbar from '../components/snippets/Navbar';
 import Footer from '../components/snippets/Footer';
 import Form from '../components/snippets/Form';
@@ -10,6 +10,10 @@ const UserForm = () => {
 
     const [step, setStep] = useState(0);
     const location = useLocation();
+
+    useEffect(()=>{
+        setCurrentStep(0)
+    }, [])
 
     const setCurrentStep = (value) => {
         setStep(value);
@@ -36,9 +40,10 @@ const UserForm = () => {
                                             <div className="action">
                                                 {
                                                     step === 0 ?
-                                                        <Form setCurrentStep={setCurrentStep} />
+                                                    <CardForm setCurrentStep={setCurrentStep} />
                                                     :
-                                                        <CardForm setCurrentStep={setCurrentStep} />
+
+                                                    <Form setCurrentStep={setCurrentStep} />   
                                                 }
                                             </div>
                                         </div>

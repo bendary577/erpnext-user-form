@@ -29,7 +29,7 @@
       "password_confirmation_placeholder" : "تأكيد كلمة السر",
       "agree" : "أوافق علي جميع",
       "terms_and_service" : "بنود الخدمة",
-      "register" : "سجل"
+      "register" : "البدء في إنشاء الموقع"
     },
     "subscription" : {
       "subscription_plans" : "خطط الاشتراك",
@@ -147,6 +147,7 @@
       "phone" : "رقم الهاتف",
       "company_name" : "اسم الشركة",
       "registration_form" : "التسجيل",
-      "checkout" : "الدفع"
+      "checkout" : "الدفع",
+      "installation" : "إنشاء الموقع"
     }
   }
