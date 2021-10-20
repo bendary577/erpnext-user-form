@@ -18,6 +18,7 @@ const UserForm = () => {
     }, [])
 
     const setCurrentStep = (value) => {
+        console.log("current steps is : " + value)
         setStep(value);
     }
     
@@ -49,7 +50,6 @@ const UserForm = () => {
                                                         :
                                                         step === 2 ?
                                                         <ConfirmationScreen setCurrentStep={setCurrentStep}/>
-                                                        
                                                         :
                                                         <SiteInstallation />
                                                         
