@@ -1,11 +1,19 @@
 import React from 'react';
-import '../../assets/css/plan.css';
 import { useTranslation } from 'react-i18next';
-import { Link } from "react-router-dom";
+import {useUserData} from '../../context/UserDataContext';
+import { useHistory } from "react-router-dom";
+import '../../assets/css/plan.css';
 
 const StandardSubscriptionPlanCard = (props) => {
 
     const { t } = useTranslation();
+    const history = useHistory();
+    const {setPlan} = useUserData();
+
+    const selectStandardPlan = () => {
+        setPlan('standard')
+        history.push('form');
+    }
 
     return (
         <div className="subscription_plan_card_div w-100">
@@ -34,7 +42,7 @@ const StandardSubscriptionPlanCard = (props) => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                     <Link className="link" to={{pathname:`form`, plan:`standard`}}>{t(`subscription.choose_plan`)}</Link> 
+                    <a href="javascript:void();" onClick={selectStandardPlan} className="">{t(`subscription.choose_plan`)}</a>
                 </div>
             </div>
         </div>

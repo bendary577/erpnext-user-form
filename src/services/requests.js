@@ -1,6 +1,8 @@
 
 import { axiosInstance } from './axios';
 import { REGISTRATION_API,
+         CHECK_CONFIRMATION_CODE,
+         INSTALL_SITE_API,
          SEND_CUSTOMIZATION_PLAN_QUOTE_API,
          SEND_DEVELOPER_CV_API,
          SEND_IMPLEMENTER_CV_API 
@@ -10,6 +12,24 @@ import { REGISTRATION_API,
 export const register = async (data) => {
     try {
         let response = await axiosInstance.post(REGISTRATION_API, data);
+        return response;
+    }catch(error){
+        console.log(error);
+    }
+}
+
+export const checkConfirmationCode = async (data) => {
+    try {
+        let response = await axiosInstance.post(CHECK_CONFIRMATION_CODE, data);
+        return response;
+    }catch(error){
+        console.log(error);
+    }
+}
+
+export const installERPNexto = async (data) => {
+    try {
+        let response = await axiosInstance.post(INSTALL_SITE_API, data);
         return response;
     }catch(error){
         console.log(error);

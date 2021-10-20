@@ -4,21 +4,20 @@ import Footer from '../components/snippets/Footer';
 import Form from '../components/snippets/Form';
 import StepperComponent from '../components/buttons/StepperComponent';
 import CardForm from '../components/snippets/CardForm';
-import { useLocation } from 'react-router-dom';
 import SiteInstallation from './SiteInstallation';
 import ConfirmationScreen from './ConfirmationScreen';
+import {useUserData} from '../context/UserDataContext';
 
 const UserForm = () => {
 
     const [step, setStep] = useState(0);
-    const location = useLocation();
+    const {plan} = useUserData();
 
     useEffect(()=>{
         setCurrentStep(0)
     }, [])
 
     const setCurrentStep = (value) => {
-        console.log("current steps is : " + value)
         setStep(value);
     }
     
@@ -33,7 +32,7 @@ const UserForm = () => {
                                 <div class="card text-black" style={{"border-radius" : "25px"}}>
                                     <div class="card-body p-md-5">
                                         {
-                                            location.plan === 'free' ?
+                                            plan === 'free' ?
                                                 <Form setCurrentStep={setCurrentStep} />
                                             :
                                             <div className="">

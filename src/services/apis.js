@@ -1,8 +1,16 @@
-let BASE_API = `http://34.125.19.92/`;
-//let BASE_API = `http://127.0.0.1:5000/`;
+//let BASE_API = `http://34.125.19.92/`;
+//let BASE_API = `http://127.0.0.1:8000/`;
+let BASE_API = `http://127.0.0.1:5000/`;
+
 
 //-------------------------------- Auth API endpoints --------------------------
 export const REGISTRATION_API = `${BASE_API}signup`;
+
+//-------------------------------- Check Confirmation Code API endpoints --------------------------
+export const CHECK_CONFIRMATION_CODE = `${BASE_API}check-confirmation-code`;
+
+//-------------------------------- Install Site API endpoints --------------------------
+export const INSTALL_SITE_API = `${BASE_API}install-erpnexto`;
 
 //-------------------------------- Send Customization Plan Quote API endpoints --------------------------
 export const SEND_CUSTOMIZATION_PLAN_QUOTE_API = `${BASE_API}send-quote`;

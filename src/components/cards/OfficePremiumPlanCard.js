@@ -12,11 +12,19 @@ import powerPointIcon from '../../assets/icons/microsoft/powerpoint.png';
 import accessIcon from '../../assets/icons/microsoft/access.png';
 import publisherIcon from '../../assets/icons/microsoft/publisher.png';
 import outlookIcon from '../../assets/icons/microsoft/outlook.png';
-
+import {useUserData} from '../../context/UserDataContext';
+import { useHistory } from "react-router-dom";
 
 const OfficePremiumPlanCard = () => {
 
     const { t } = useTranslation();
+    const history = useHistory();
+    const {setPlan} = useUserData();
+
+    const selectMicrosoftNextoPlan = () => {
+        setPlan('microsoft_nexto_365')
+        history.push('form');
+    }
 
     return (
         <div className="subscription_plan_card_div w-100">
@@ -113,7 +121,7 @@ const OfficePremiumPlanCard = () => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                    <Link className="link" to={{pathname:`form`, plan:`microsoft_nexto_365`}}>{t(`subscription.choose_plan`)}</Link>
+                    <a href="javascript:void();" onClick={selectMicrosoftNextoPlan} className="">{t(`subscription.choose_plan`)}</a>
                 </div>
             </div>
         </div>

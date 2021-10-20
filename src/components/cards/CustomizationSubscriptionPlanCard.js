@@ -3,9 +3,11 @@ import '../../assets/css/subscription_plan_card.css';
 import { useTranslation } from 'react-i18next';
 import questionIcon from '../../assets/icons/subscription/question.png';
 
+
 const CustomizationSubscriptionPlanCard = (props) => {
 
     const { t } = useTranslation();
+
 
     return (
         <div className="subscription_plan_card_div w-100">
@@ -30,7 +32,7 @@ const CustomizationSubscriptionPlanCard = (props) => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                    <a type="button" className="link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{t(`subscription.request_quote`)} </a>
+                    <a href="javascript:void();" className="link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{t(`subscription.request_quote`)} </a>
                 </div>
             </div>
         </div>

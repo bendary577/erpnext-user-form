@@ -6,10 +6,19 @@ import teamsIcon from '../../assets/icons/microsoft/teams.png';
 import sharepointIcon from '../../assets/icons/microsoft/sharePoint.png';
 import oneDriveIcon from '../../assets/icons/microsoft/oneDrive.png';
 import exchangeIcon from '../../assets/icons/microsoft/exchange.png';
+import {useUserData} from '../../context/UserDataContext';
+import { useHistory } from "react-router-dom";
 
 const OfficeStandardPlanCard = () => {
 
     const { t } = useTranslation();
+    const history = useHistory();
+    const {setPlan} = useUserData();
+
+    const selectMicrosoftStandardPlan = () => {
+        setPlan('microsoft_standard')
+        history.push('form');
+    }
 
     return (
         <div className="subscription_plan_card_div w-100">
@@ -70,7 +79,7 @@ const OfficeStandardPlanCard = () => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                    <Link className="link" to={{pathname:`form`, plan:`microsoft_standard`}}>{t(`subscription.choose_plan`)}</Link>
+                    <a href="javascript:void();" onClick={selectMicrosoftStandardPlan} className="">{t(`subscription.choose_plan`)}</a>
                 </div>
             </div>
         </div>

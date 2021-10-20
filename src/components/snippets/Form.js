@@ -1,60 +1,41 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {register} from '../../services/requests';
 import { useTranslation } from 'react-i18next';
-import 'react-phone-number-input/style.css';
 import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
-import { useLocation } from 'react-router-dom';
+import {useUserData} from '../../context/UserDataContext';
+import 'react-phone-number-input/style.css';
 
 const Form = (props) => {
 
-    const location = useLocation();
     const [companyName, setCompanyName] = useState('');
     const [roleInCompany, setRoleInCompany] = useState('');
-    const [companySubDomain, setCompanySubDomain] = useState('');
-    const [businessMail, setBusinessMail] = useState('');
     const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState('');
     const [checked, setChecked] = useState(false);
-    const [plan, setPlan] = useState(location.plan);
     const [value, setValue] = useState();
     const { t } = useTranslation();
+    //set user data in the context
+    const { plan, siteName, setSiteName, email, setEmail,sitePassword, setSitePassword} = useUserData();
     
-    useEffect(()=>{
-        if(location.plan === 'free'){
-            setPlan('free')
-        }else if(plan === 'standard'){
-            setPlan('standard')
-        }else if(plan === 'premium'){
-            setPlan('premium')
-        }else if(plan === 'microsoft_standard'){
-            setPlan('microsoft_standard')
-        }else if(plan === 'microsoft_nexto_365'){
-            setPlan('microsoft_nexto_365')
-        }
-    }, [])
-
     const handleSubmit = async (e) => {
-        props.setCurrentStep(2)
         e.preventDefault();
-        /*
-        let validation = verifyPasswords(password, confirmPassword);
+        let validation = verifyPasswords();
         if(validation){
+            setSiteName(setSiteName)
+            setEmail(email)
+            setSitePassword(sitePassword)
             let data = {
                 company_name : companyName,
                 role : roleInCompany,
-                site_name : companySubDomain,
-                business_mail : businessMail,
+                site_name : siteName,
+                email : email,
                 phone,
-                password,
                 plan
             }
             let response = await register(data);
             if(response.status === 200){
-                //clearInputs();
-                console.log("success request")
                 setMessage("you have registered your website successfully");
                 props.setCurrentStep(2)
             }else{
@@ -63,11 +44,10 @@ const Form = (props) => {
         }else{
 
         }
-        */
     }
 
-    const verifyPasswords = (password, confirmPassword) => {
-        if(password === confirmPassword){
+    const verifyPasswords = () => {
+        if(sitePassword === confirmPassword){
             return true;
         }else{
             setMessage("your passwords are not identical");
@@ -83,21 +63,20 @@ const Form = (props) => {
         setRoleInCompany(userInput)
     }
 
-    const handleChangeCompanyDomain = (userInput) => {
-        console.log(userInput)
-        setCompanySubDomain(userInput)
+    const handleChangeSiteName = (userInput) => {
+        setSiteName(userInput)
     }
 
-    const handleChangeBusinessMain = (userInput) => {
-        setBusinessMail(userInput)
+    const handleChangeEmail = (userInput) => {
+        setEmail(userInput)
     }
 
     const handleChangePhone = (userInput) => {
         setPhone(userInput)
     }
 
-    const handleChangePassword = (userInput) => {
-        setPassword(userInput)
+    const handleChangeSitePassword = (userInput) => {
+        setSitePassword(userInput)
     }
 
     const handleChangeConfirmPassword = (userInput) => {
@@ -106,14 +85,6 @@ const Form = (props) => {
 
     const handleChangeCheckBox= () => {
         setChecked(!checked)
-    }
-
-    const clearInputs = () => {
-        setCompanySubDomain('');
-        setBusinessMail('');
-        setPassword('');
-        setConfirmPassword('');
-        setMessage('');
     }
 
     return (
@@ -149,14 +120,14 @@ const Form = (props) => {
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                            <input type="email" id="subdomain" value={companySubDomain} onChange={(e)=> {handleChangeCompanyDomain(e.target.value)}} class="form-control text-align-end" placeholder={t(`form.site_name_placeholder`)} />
+                            <input type="email" id="subdomain" value={siteName} onChange={(e)=> {handleChangeSiteName(e.target.value)}} class="form-control text-align-end" placeholder={t(`form.site_name_placeholder`)} />
                         </div>
                     </div>
 
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                            <input type="email" id="business_main" value={businessMail} onChange={(e)=> {handleChangeBusinessMain(e.target.value)}} class="form-control" placeholder={t(`form.business_mail_placeholder`)} required/>
+                            <input type="email" id="email" value={email} onChange={(e)=> {handleChangeEmail(e.target.value)}} class="form-control" placeholder={t(`form.business_mail_placeholder`)} required/>
                         </div>
                     </div>
 
@@ -178,7 +149,7 @@ const Form = (props) => {
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                            <input type="password" id="password" value={password} onChange={(e)=> {handleChangePassword(e.target.value)}} class="form-control" placeholder={t(`form.password_placeholder`)} required/>
+                            <input type="password" id="password" value={sitePassword} onChange={(e)=> {handleChangeSitePassword(e.target.value)}} class="form-control" placeholder={t(`form.password_placeholder`)} required/>
                         </div>
                     </div>
 
@@ -198,7 +169,6 @@ const Form = (props) => {
 
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 w-100">
                          <button type="submit" onClick={handleSubmit}  class="btn btn-primary btn-lg btn-block">{t(`form.register`)}</button> 
-                        {/* <a href="javascript:void();" className="btn btn-primary btn-large" onClick={() => { props.setCurrentStep(2) }}>{t(`form.register`)}</a> */}
                     </div>
 
                 </form>

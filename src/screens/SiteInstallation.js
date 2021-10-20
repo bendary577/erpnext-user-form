@@ -1,23 +1,33 @@
 import React, {useState, useEffect} from 'react';
-import Navbar from '../components/snippets/Navbar';
-import Footer from '../components/snippets/Footer';
-import Form from '../components/snippets/Form';
-import StepperComponent from '../components/buttons/StepperComponent';
-import CardForm from '../components/snippets/CardForm';
-import { useLocation } from 'react-router-dom';
+import {useUserData} from '../context/UserDataContext';
 import installationImage from '../assets/images/form/installing.png';
+import {installERPNexto} from '../services/requests';
 
 const SiteInstallation = () => {
 
-    const [step, setStep] = useState(0);
-    const location = useLocation();
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState('');
+    const {siteName, email, plan, sitePassword} = useUserData();
 
     useEffect(()=>{
-        setCurrentStep(0)
+        startERPNextoInstallation();
     }, [])
 
-    const setCurrentStep = (value) => {
-        setStep(value);
+    const startERPNextoInstallation = async () => {
+        let data = {
+            site_name : siteName,
+            password : sitePassword,
+            email,
+            plan,
+        }
+        setLoading(true);
+        let response = await installERPNexto(data);
+        if(response.status === 200){
+            setMessage("you have completed your website successfully");
+        }else{
+            setMessage(response.data.message);
+        }
+        setLoading(false);
     }
     
     return (

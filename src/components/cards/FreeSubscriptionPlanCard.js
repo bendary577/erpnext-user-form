@@ -2,11 +2,19 @@ import React from 'react';
 import '../../assets/css/plan.css';
 import { useTranslation } from 'react-i18next';
 import falseIcon from '../../assets/icons/subscription/false.png';
-import { Link } from "react-router-dom";
+import {useUserData} from '../../context/UserDataContext';
+import { useHistory } from "react-router-dom";
 
 const FreeSubscriptionPlanCard = () => {
 
     const { t } = useTranslation();
+    const history = useHistory();
+    const {setPlan} = useUserData();
+
+    const selectFreePlan = () => {
+        setPlan('free')
+        history.push('form');
+    }
 
     return (
         <div className="subscription_plan_card_div w-100">
@@ -32,7 +40,7 @@ const FreeSubscriptionPlanCard = () => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                    <Link className="link" to={{pathname:`form`, plan:`free`}}>{t(`subscription.choose_plan`)}</Link>
+                    <a href="javascript:void();" onClick={selectFreePlan} className="">{t(`subscription.choose_plan`)}</a>
                 </div>
             </div>
         </div>

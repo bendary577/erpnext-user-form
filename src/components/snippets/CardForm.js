@@ -1,17 +1,15 @@
-import React, {useState, useEffect} from 'react';
-import { useTranslation } from 'react-i18next';
-import 'react-phone-number-input/style.css';
-import { useLocation } from 'react-router-dom';
+import React, {useEffect} from 'react';
 import { PAYMENT_IFRAME_URL } from '../../services/apis';
 import {authenticate} from '../../services/payment';
+import {useUserData} from '../../context/UserDataContext';
+import 'react-phone-number-input/style.css';
 
 const CardForm = (props) => {
 
-    const location = useLocation();
-    const { t } = useTranslation();
+    const {plan} = useUserData();
 
     useEffect(()=>{
-        authenticate(props.plan);
+        authenticate(plan);
     }, [])
 
     return (

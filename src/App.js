@@ -6,12 +6,11 @@ import UserForm from '../src/screens/UserForm';
 import EInvoice from './screens/EInvoice';
 import ZakatAuthority from './screens/ZakatAuthority';
 import WOW from 'wowjs';
-import { FloatingButton, Item } from "react-floating-button";
-import icon from './assets/icons/zakat/kaaba.png';
 import { useTranslation } from "react-i18next";
 import PaymentForm from './screens/PaymentForm';
 import Microsoft365 from './screens/Microsoft365';
 import BecomePartner from './screens/BecomePartner';
+import { UserDataProvider } from './context/UserDataContext'
 
 function App() {
 
@@ -39,39 +38,41 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Switch>
+      <UserDataProvider>
+        <BrowserRouter>
+          <Switch>
 
-          <Route exact path={["/", "/subscription-plans"]}>
-            <SubscriptionPlans />
-          </Route>
+            <Route exact path={["/", "/subscription-plans"]}>
+              <SubscriptionPlans />
+            </Route>
 
-          <Route exact path="/erpnexto-365">
-            <Microsoft365 />
-          </Route>
+            <Route exact path="/erpnexto-365">
+              <Microsoft365 />
+            </Route>
 
-          <Route exact path="/e-invoice">
-            <EInvoice />
-          </Route>
+            <Route exact path="/e-invoice">
+              <EInvoice />
+            </Route>
 
-          <Route exact path="/form">
-            <UserForm />
-          </Route>
+            <Route exact path="/form">
+              <UserForm />
+            </Route>
 
-          <Route exact path="/zakat-authority">
-            <ZakatAuthority />
-          </Route>
+            <Route exact path="/zakat-authority">
+              <ZakatAuthority />
+            </Route>
 
-          <Route exact path="/payment-form">
-            <PaymentForm />
-          </Route>
+            <Route exact path="/payment-form">
+              <PaymentForm />
+            </Route>
 
-          <Route exact path="/become-partner">
-            <BecomePartner />
-          </Route>
+            <Route exact path="/become-partner">
+              <BecomePartner />
+            </Route>
 
-        </Switch>
-      </BrowserRouter>
+          </Switch>
+        </BrowserRouter>
+      </UserDataProvider>
     </div>
   );
 }
