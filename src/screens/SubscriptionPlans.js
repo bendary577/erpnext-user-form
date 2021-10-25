@@ -7,7 +7,8 @@ import { useTranslation } from 'react-i18next';
 import StandardSubscriptionPlanCard from '../components/cards/StandardSubscriptionPlanCard';
 import CustomizationSubscriptionPlanCard from '../components/cards/CustomizationSubscriptionPlanCard';
 import '../assets/css/subscription_screen.css';
-import ballonIcon from '../assets/icons/subscription/balloon.png'
+import ballonIcon from '../assets/icons/subscription/balloon.png';
+import QuoteSentImage from '../assets/images/quote/quote_sent.png'
 import {sendCustomizationPlanQuote} from '../services/requests';
 
 const SubscriptionPlans = () => {
@@ -16,6 +17,7 @@ const SubscriptionPlans = () => {
     const [phone, setPhone] = useState('');
     const [companyName, setCompanyName] = useState('');
     const [message, setMessage] = useState('');
+    const [quoteSent, setQuoteSent] = useState(false);
     const { t } = useTranslation();
 
     const handleChangeEmail= (userInput) => {
@@ -38,12 +40,25 @@ const SubscriptionPlans = () => {
             companyName
         }
         let response = await sendCustomizationPlanQuote(data);
+        setMessage(response.data.message);
         if(response.status === 200){
-            setMessage("you have sent your quote successfully");
-        }else{
-            setMessage(response.data.message);
+            setQuoteSent(true)
+            clearInputs()
+            setTimeout(function(){ clearQuoteMessage() }, 6000)
         }
     }
+    
+    
+    const clearQuoteMessage = () => {
+        setQuoteSent(false);
+    }
+
+    const clearInputs = () => {
+        setCompanyName("")
+        setEmail("")
+        setPhone("")
+    }
+    
 
     return (
         <div>
@@ -92,24 +107,33 @@ const SubscriptionPlans = () => {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
                         </div>
                         <div class="modal-body text-left">
-                            <form onSubmit={handleSubmit}>
-                                <div class="mb-3">
-                                    <h4 for="email" class="form-label text-justify">{t(`form_data.email`)}</h4>
-                                    <input type="email" class="form-control" name="email" id="email" value={email} onChange={(e)=> {handleChangeEmail(e.target.value)}} aria-describedby="emailHelp" />
+                            {
+                            quoteSent === false ?
+                                <form onSubmit={handleSubmit}>
+                                    <div class="mb-3">
+                                        <h4 for="email" class="form-label text-justify">{t(`form_data.email`)}</h4>
+                                        <input type="email" class="form-control" name="email" id="email" value={email} onChange={(e)=> {handleChangeEmail(e.target.value)}} aria-describedby="emailHelp" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <h4 for="phone" class="form-label text-justify">{t(`form_data.phone`)}</h4>
+                                        <input type="tel" value={phone} name="phone" onChange={(e)=> {handleChangePhone(e.target.value)}} class="form-control" id="phone" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <h4 for="companyName"  class="form-label text-justify">{t(`form_data.company_name`)}</h4>
+                                        <input type="text" value={companyName} name="companyName" onChange={(e)=> {handleChangeCompanyName(e.target.value)}} class="form-control" id="companyName" />
+                                    </div>
+                                    <button type="submit"onClick={handleSubmit} class="btn btn-primary text-justify">{t(`general.send`)}</button>
+                                </form>
+                            :
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <img src={QuoteSentImage} style={{width:'200px', height:'200px'}} class="mx-2" alt="ballon"/>
+                                    <h4 className="text-success">{message}</h4>
                                 </div>
-                                <div class="mb-3">
-                                    <h4 for="phone" class="form-label text-justify">{t(`form_data.phone`)}</h4>
-                                    <input type="tel" value={phone} name="phone" onChange={(e)=> {handleChangePhone(e.target.value)}} class="form-control" id="phone" />
-                                </div>
-                                <div class="mb-3">
-                                    <h4 for="companyName"  class="form-label text-justify">{t(`form_data.company_name`)}</h4>
-                                    <input type="text" value={companyName} name="companyName" onChange={(e)=> {handleChangeCompanyName(e.target.value)}} class="form-control" id="companyName" />
-                                </div>
-                                <button type="submit"onClick={handleSubmit} class="btn btn-primary text-justify">{t(`general.send`)}</button>
-                            </form>
-                        </div>
+                            }
+
                         </div>
                     </div>
+                </div>
             </div>
             <Footer />
         </div>

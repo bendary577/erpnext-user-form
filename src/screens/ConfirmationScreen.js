@@ -3,12 +3,14 @@ import confirmMailImage from '../assets/images/form/confirm_mail.png';
 import { useTranslation } from 'react-i18next';
 import {useUserData} from '../context/UserDataContext';
 import {checkConfirmationCode} from '../services/requests';
+import RequestLoading from '../components/loading/RequestLoading';
 
 const ConfirmationScreen = (props) => {
 
     const { t } = useTranslation();
     const [confirmationCode, setConfirmationCode] = useState('');
     const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false);
     const {email} = useUserData();
     
     const handleChangeConfirmationCode = (userInput) => {
@@ -21,15 +23,19 @@ const ConfirmationScreen = (props) => {
             code : confirmationCode,
             email,
         }
+        setLoading(true)
         let response = await checkConfirmationCode(data);
         if(response.status === 200){
             props.setCurrentStep(3)
         }else{
             setMessage(response.data.message);
         }
+        setLoading(false)
     }
 
     return (
+        loading === false ? 
+
         <div className="site_installation_div" style={{"height":"500px"}}>
             <div className="container">
                 <div className="row">
@@ -41,6 +47,7 @@ const ConfirmationScreen = (props) => {
                             <form onSubmit={checkVerificationCode}>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Verification Code</label>
+                                    { message === '' ? <></> : <h4 className="text-danger">{message}</h4>}
                                     <input type="email" value={confirmationCode} onChange={(e)=> {handleChangeConfirmationCode(e.target.value)}}  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                                 </div>
@@ -55,6 +62,10 @@ const ConfirmationScreen = (props) => {
             </div>
             
         </div>
+        
+        :
+
+        <RequestLoading />
     )
 }
 

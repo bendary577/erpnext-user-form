@@ -4,6 +4,7 @@ import checkIcon from '../../assets/images/e-invoice/check.png';
 import handIcon from '../../assets/icons/become partner/hand.png';
 import { useTranslation } from 'react-i18next';
 import {sendImplementerCV} from '../../services/requests';
+import RequestLoading from '../loading/RequestLoading';
 
 const ImplementerCard = (props) => {
 
@@ -12,6 +13,7 @@ const ImplementerCard = (props) => {
     const [email, setEmail] = useState('');
     const [implementerCV, setImplementerCV] = useState('');
     const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false);
     const { t } = useTranslation();
 
     const handleChangeName = (userInput) => {
@@ -39,7 +41,8 @@ const ImplementerCard = (props) => {
             companyName,
             email,
             implementerCVFile
-        } 
+        }
+        setLoading(true) 
         let response = await sendImplementerCV(data);
         if(response.status === 200){
             //clearInputs();
@@ -47,9 +50,11 @@ const ImplementerCard = (props) => {
         }else{
             setMessage(response.data.message);
         }
+        setLoading(false)
     }
 
     return (
+        loading === false ? 
         <div className="subscription_plan_card_div">
             <div class="card card-shadow border-0 mb-4">
             <div class="card-body p-4">
@@ -100,6 +105,10 @@ const ImplementerCard = (props) => {
                 </div>
             </div>
         </div>
+
+        :
+
+        <RequestLoading />
     )
 }
 

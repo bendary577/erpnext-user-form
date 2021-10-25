@@ -4,11 +4,13 @@ import checkIcon from '../../assets/images/e-invoice/check.png';
 import handIcon from '../../assets/icons/become partner/hand.png';
 import { useTranslation } from 'react-i18next';
 import {sendDeveloperCV} from '../../services/requests';
+import RequestLoading from '../loading/RequestLoading';
 
 const DeveloperCard = (props) => {
 
     const [developerCV, setDeveloperCV] = useState(null);
     const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false);
     const { t } = useTranslation();
 
     const handleChangeDeveloperCV = (userInput) => {
@@ -18,7 +20,8 @@ const DeveloperCard = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         let developerCVFile = new FormData();
-        developerCVFile.append('developer_cv', developerCV); 
+        developerCVFile.append('developer_cv', developerCV);
+        setLoading(true)
         let response = await sendDeveloperCV(developerCVFile);
         if(response.status === 200){
             //clearInputs();
@@ -26,9 +29,11 @@ const DeveloperCard = (props) => {
         }else{
             setMessage(response.data.message);
         }
+        setLoading(false)
     }
 
     return (
+        loading === false ? 
         <div className="subscription_plan_card_div">
             <div class="card card-shadow border-0 mb-4">
                 <div class="card-body p-4">
@@ -77,6 +82,10 @@ const DeveloperCard = (props) => {
                 </div>
             </div>
         </div>
+
+        : 
+        
+        <RequestLoading />
     )
 }
 

@@ -5,6 +5,7 @@ import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
 import {useUserData} from '../../context/UserDataContext';
 import 'react-phone-number-input/style.css';
+import RequestLoading from '../loading/RequestLoading';
 
 const Form = (props) => {
 
@@ -15,6 +16,7 @@ const Form = (props) => {
     const [message, setMessage] = useState('');
     const [checked, setChecked] = useState(false);
     const [value, setValue] = useState();
+    const [loading, setLoading] = useState(false);
     const { t } = useTranslation();
     //set user data in the context
     const { plan, siteName, setSiteName, email, setEmail,sitePassword, setSitePassword} = useUserData();
@@ -34,13 +36,13 @@ const Form = (props) => {
                 phone,
                 plan
             }
+            setLoading(true);
             let response = await register(data);
+            setMessage(response.data.message);
             if(response.status === 200){
-                setMessage("you have registered your website successfully");
                 props.setCurrentStep(2)
-            }else{
-                setMessage(response.data.message);
             }
+            setLoading(false);
         }else{
 
         }
@@ -88,6 +90,8 @@ const Form = (props) => {
     }
 
     return (
+        loading === false ? 
+
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
@@ -120,7 +124,7 @@ const Form = (props) => {
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                            <input type="email" id="subdomain" value={siteName} onChange={(e)=> {handleChangeSiteName(e.target.value)}} class="form-control text-align-end" placeholder={t(`form.site_name_placeholder`)} />
+                            <input type="email" id="subdomain" value={siteName} onChange={(e)=> {handleChangeSiteName(e.target.value)}} class="form-control text-align-end" placeholder={t(`form.site_name_placeholder`)} required/>
                         </div>
                     </div>
 
@@ -161,7 +165,7 @@ const Form = (props) => {
                     </div>
 
                     <div class="form-check form-check-inline ms-1 mb-4">
-                        <input class="form-check-input mt-1" defaultChecked={checked} type="checkbox" id="checkbox" onChange={handleChangeCheckBox} />
+                        <input class="form-check-input mt-1" defaultChecked={checked} type="checkbox" id="checkbox" onChange={handleChangeCheckBox} required/>
                         <label class="form-check-label m-0 p-0" for="checkbox">
                             {t(`form.agree`)} <a href="javascript:void();">{t(`form.terms_and_service`)}</a>
                         </label>
@@ -178,6 +182,8 @@ const Form = (props) => {
                     <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png" class="img-fluid" alt="Sample image" />
                 </div>
             </div>
+        :
+        <RequestLoading />
     )
 }
 
