@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import '../../assets/css/subscription_plan_card.css';
 import checkIcon from '../../assets/images/e-invoice/check.png';
 import handIcon from '../../assets/icons/become partner/hand.png';
 import { useTranslation } from 'react-i18next';
 import {sendDeveloperCV} from '../../services/requests';
 import RequestLoading from '../loading/RequestLoading';
+import '../../assets/css/subscription_plan_card.css';
 
 const DeveloperCard = (props) => {
 
@@ -19,15 +19,14 @@ const DeveloperCard = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(developerCV)
         let developerCVFile = new FormData();
         developerCVFile.append('developer_cv', developerCV);
         setLoading(true)
         let response = await sendDeveloperCV(developerCVFile);
-        if(response.status === 200){
-            //clearInputs();
-            setMessage("you have registered your website successfully");
-        }else{
+        if(response){
             setMessage(response.data.message);
+            setTimeout(function(){ setMessage('') }, 6000)
         }
         setLoading(false)
     }
@@ -68,6 +67,8 @@ const DeveloperCard = (props) => {
                         <h5>{t(`bacome_partner.send_cv`)}</h5>
                         <img src={handIcon} style={{width:'20px', height:'20px'}} class="mt-2" alt="" />
                     </div>
+
+                    {message === '' ? <></> : <h5 className="text-success">{message}</h5>}
 
                     <form class="mt-2" onSubmit={handleSubmit}>
                         <div class="d-flex flex-row align-items-center mb-4">

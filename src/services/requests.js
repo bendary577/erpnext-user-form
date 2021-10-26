@@ -54,9 +54,13 @@ export const sendDeveloperCV = async (data) => {
     }
 }
 
-export const sendImplementerCV = async (data) => {
+export const sendImplementerCV = async (file, data) => {
     try {
-        let response = await axiosInstance.post(SEND_IMPLEMENTER_CV_API, data,  {headers: { "Content-Type": "multipart/form-data"}});
+        var url = new URL(SEND_IMPLEMENTER_CV_API);
+        url.searchParams.set('name', data.name);
+        url.searchParams.set('companyName', data.companyName);
+        url.searchParams.set('email', data.email);
+        let response = await axiosInstance.post(url, file,  {headers: { "Content-Type": "multipart/form-data"}});
         return response;
     }catch(error){
         console.log(error);
