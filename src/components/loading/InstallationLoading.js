@@ -9,7 +9,7 @@ const InstallationLoading = (props) => {
 
     return (
         <div className="request_loading_div d-flex justify-content-center align-items-center">
-            <Loader type="Ball-Triangle" color="#00BFFF" height={200} width={200}  />
+            <Loader type="Ball-Triangle" color="#00BFFF" height={200} width={600}  />
         </div>
     )
 }   

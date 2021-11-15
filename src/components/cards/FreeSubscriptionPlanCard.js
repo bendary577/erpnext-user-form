@@ -40,7 +40,7 @@ const FreeSubscriptionPlanCard = () => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup">
-                    <a href="javascript:void();" onClick={selectFreePlan} className="">{t(`subscription.choose_plan`)}</a>
+                    <a href="javascript:void();" onClick={selectFreePlan} className="link">{t(`subscription.choose_plan`)}</a>
                 </div>
             </div>
         </div>

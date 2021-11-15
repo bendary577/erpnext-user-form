@@ -42,7 +42,7 @@ const PremiumSubscriptionPlanCard = (props) => {
                     </ul>
                 </div>
                 <div class="pricingTable-signup ">
-                    <a href="javascript:void();" onClick={selectPremiumPlan} className="">{t(`subscription.choose_plan`)}</a>
+                    <a href="javascript:void();" onClick={selectPremiumPlan} className="link">{t(`subscription.choose_plan`)}</a>
                 </div>
             </div>
         </div>

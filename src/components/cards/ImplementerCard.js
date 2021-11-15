@@ -52,7 +52,7 @@ const ImplementerCard = (props) => {
     return (
         loading === false ? 
         <div className="subscription_plan_card_div">
-            <div class="card card-shadow border-0 mb-4">
+            <div class="card card-shadow border-0 mb-4" style={{'height':'550px'}}>
             <div class="card-body p-4">
                     <div class="d-flex align-items-center">
                         <h5 class="font-weight-medium mb-0"><strong>{t("bacome_partner.implementation_partner")}</strong></h5>
@@ -80,16 +80,17 @@ const ImplementerCard = (props) => {
                                     <input type="email" onChange={(e)=> {handleChangeEmail(e.target.value)}} id="business_email" placeholder={t("bacome_partner.business_mail")} class="form-control" required/>
                                 </div>
                             </div>
+
+                            <div class="d-flex justify-content-center">
+                                <h5>{t('bacome_partner.send_cv')}</h5>
+                                <img src={handIcon} style={{width:'20px', height:'20px'}} class="mt-2" alt="" />
+                            </div>
+
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                                 <div class="form-outline flex-fill mb-0">
                                     <input type="file" id="implementer_cv" name="implementer_cv" onChange={handleChangeImplementerCV} required/>
                                 </div>
-                            </div>
-
-                            <div class="d-flex justify-content-center">
-                                <h5>{t('bacome_partner.send_cv')}</h5>
-                                <img src={handIcon} style={{width:'20px', height:'20px'}} class="mt-2" alt="" />
                             </div>
 
                             {message === '' ? <></> : <h5 className="text-success">{message}</h5>}

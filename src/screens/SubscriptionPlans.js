@@ -70,7 +70,7 @@ const SubscriptionPlans = () => {
                             <div class="col-lg-12 col-xl-11">
                                 <div class="card" style={{"border-radius" : "25px"}}>
                                 <div class="card-body p-md-5">
-                                    <div class="row ">
+                                    <div class="row justify-content-center">
                                         <div class="d-flex justify-content-center">
                                             <p class="wow animate__animated animate__backInLeft text-center text-black h1 fw-bold mb-3 mx-1 mx-md-4 mt-4">{t(`subscription.subscription_plans`)}</p>
                                             <a class="wow animate__animated animate__backInRight btn h-50 mt-4 btn-danger" href="become-partner">
@@ -79,16 +79,18 @@ const SubscriptionPlans = () => {
                                             </a>
                                         </div>
                                         <h4 className="mb-4 wow animate__animated animate__backInLeft"><strong>{t(`subscription.intro`)}</strong></h4>
-                                        <div class="wow animate__animated animate__backInDown d-flex justify-content-center align-items-center col-lg-3 col-md-6 col-sm-6">
+                                        {/*
+                                        <div class="wow animate__animated animate__backInDown d-flex justify-content-center align-items-center col-lg-3 col-md-4 col-sm-6">
                                             <FreeSubscriptionPlanCard />
                                         </div>
-                                        <div class="wow animate__animated animate__backInDown d-flex justify-content-center align-items-center col-lg-3 col-md-6 col-sm-6">
+                                        */}
+                                        <div class="wow animate__animated animate__backInDown d-flex justify-content-center align-items-center col-lg-3 col-md-4 col-sm-6">
                                             <StandardSubscriptionPlanCard />
                                         </div>  
-                                        <div class="wow animate__animated animate__backInDown d-flex justify-content-center align-items-center col-lg-3 col-md-6 col-sm-6">
+                                        <div class="wow animate__animated animate__backInDown d-flex justify-content-center align-items-center col-lg-3 col-md-4 col-sm-6">
                                             <PremiumSubscriptionPlanCard />
                                         </div>
-                                        <div class="wow animate__animated animate__backInDown d-flex justify-content-center align-items-center col-lg-3 col-md-6 col-sm-6">
+                                        <div class="wow animate__animated animate__backInDown d-flex justify-content-center align-items-center col-lg-3 col-md-4 col-sm-6">
                                             <CustomizationSubscriptionPlanCard />
                                         </div>
                                     </div>

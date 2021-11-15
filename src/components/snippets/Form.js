@@ -124,7 +124,7 @@ const Form = (props) => {
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                            <input type="email" id="subdomain" value={siteName} onChange={(e)=> {handleChangeSiteName(e.target.value)}} class="form-control text-align-end" placeholder={t(`form.site_name_placeholder`)} required/>
+                            <input type="text" id="subdomain" value={siteName} onChange={(e)=> {handleChangeSiteName(e.target.value)}} class="form-control text-align-end" placeholder={t(`form.site_name_placeholder`)} required/>
                         </div>
                     </div>
 
@@ -172,7 +172,7 @@ const Form = (props) => {
                     </div>
 
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 w-100">
-                         <button type="submit" onClick={handleSubmit}  class="btn btn-primary btn-lg btn-block">{t(`form.register`)}</button> 
+                         <button type="submit" class="btn btn-primary btn-lg btn-block">{t(`form.register`)}</button> 
                     </div>
 
                 </form>

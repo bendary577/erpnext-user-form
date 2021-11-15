@@ -34,7 +34,7 @@ const DeveloperCard = (props) => {
     return (
         loading === false ? 
         <div className="subscription_plan_card_div">
-            <div class="card card-shadow border-0 mb-4">
+            <div class="card card-shadow border-0 mb-4" style={{'height':'550px'}}>
                 <div class="card-body p-4">
                     <div class="d-flex align-items-center">
                         <h5 class="font-weight-medium mb-0"><strong>{t("bacome_partner.frappe_developer")}</strong></h5>
