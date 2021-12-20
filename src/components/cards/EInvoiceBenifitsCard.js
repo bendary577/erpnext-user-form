@@ -23,7 +23,6 @@ const EInvoiceBenifitsCard = (props) => {
                             <div class=" my-3">
                                 <img src={props.icon} style={{width:'100px', height:'100px'}} alt="" />
                             </div>
-                            
                         </div>
                     </div>
                 </div>
